@@ -80,3 +80,15 @@ SELECT name, country, FROM cities;
 ```
 SELECT name, population, area FROM cities;
 ```
+
+- calculate columns using math operators
+
+```
+SELECT name, population / area FROM cities;
+```
+
+- rename temporary column
+
+```
+SELECT name, population / area AS density FROM cities;
+```
