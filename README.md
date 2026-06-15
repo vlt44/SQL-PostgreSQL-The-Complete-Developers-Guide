@@ -63,3 +63,20 @@ VALUES
    ('Shanghai', 'China', 22125000, 4015),
    ('Sao Paulo', 'Brazil', 20935000, 3043);
 ```
+
+- retrieve data with select
+- `*` (shortcut to retrieve all columns)
+
+```
+SELECT * FROM cities;
+```
+
+- to designate which columns to retrieve
+
+```
+SELECT name, country, FROM cities;
+```
+
+```
+SELECT name, population, area FROM cities;
+```
