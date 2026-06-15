@@ -46,3 +46,20 @@ CREATE TABLE cities (
    area INTERGER
 );
 ```
+
+- columns and values order must match
+
+```
+INSERT INTO cities (name, country, population, area)
+VALUES ('Tokyo', 'Japan', 38505000, 8223);
+```
+
+- to add multiple rows at one time
+
+```
+INSERT INTO cities (name, country, population, area)
+VALUES
+   ('Delhi', 'India', 38505000, 8223),
+   ('Shanghai', 'China', 22125000, 4015),
+   ('Sao Paulo', 'Brazil', 20935000, 3043);
+```
