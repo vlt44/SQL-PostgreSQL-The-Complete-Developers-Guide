@@ -54,3 +54,13 @@ SELECT UPPER(CONCAT(name, ', ', country)) AS location FROM cities;
 -- data source is filtered then where clause is applied, and select statement is executed
 
 SELECT name, area FROM cities WHERE area > 4000;
+
+-- comparison Math operators
+
+SELECT name, area FROM cities WHERE area = 4000;
+
+SELECT name, area FROM cities WHERE area > 4000;
+
+SELECT name, area FROM cities WHERE area BETWEEN 2000 AND 4000;
+
+SELECT name, area FROM cities WHERE name NOT IN ('Delhi', 'Shanghai');
