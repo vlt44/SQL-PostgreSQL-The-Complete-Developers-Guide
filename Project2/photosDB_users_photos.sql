@@ -45,7 +45,6 @@ VALUES
 ('https://example.com/photo2.jpg', 1),
 ('https://example.com/photo3.jpg', 2);
 
-
 -- photos related to user deleted
 DELETE FROM users
 WHERE id = 1;
@@ -66,7 +65,6 @@ VALUES
 ('https://example.com/photo2.jpg', 1),
 ('https://example.com/photo3.jpg', 2);
 
-// user deleted but photos still exist with user_id set to null
-
+-- user deleted but photos still exist with user_id set to null
 DELETE FROM users
 WHERE id = 1;
