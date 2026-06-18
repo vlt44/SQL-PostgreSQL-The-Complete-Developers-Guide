@@ -20,3 +20,10 @@ INSERT INTO photos (url, user_id) VALUES
 ('https://example.com/photo2.jpg', 1),
 ('https://example.com/photo3.jpg', 2);
 
+-- query to select all photos for a user
+SELECT * FROM photos
+WHERE user_id = 1;
+
+-- query to select all photos along with the username of the user who uploaded them
+SELECT url, username FROM photos
+JOIN users ON users.id = photos.user_id;
