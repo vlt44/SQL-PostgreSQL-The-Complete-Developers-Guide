@@ -143,3 +143,12 @@ VALUES
 -- Retrieve comment contents and match with usernames
   SELECT contents, username FROM comments
   JOIN users ON users.id = comments.user_id;
+
+-- Retrieve comment contents and match with photo urls
+  SELECT contents, url FROM comments
+  JOIN photos ON photos.id = comments.photo_id;
+
+-- Retrieve url and username of the user who uploaded the photo that was commented on
+  SELECT url, username
+  FROM photos
+  JOIN users ON users.id = photos.user_id
