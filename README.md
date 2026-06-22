@@ -88,9 +88,6 @@ Example:
 
 - Words like 'most', 'average', 'least' are a sign that you need to use an aggregation
 
-JOINS CHEATSHEET
-![JOIN CHEATSHEET](joins_cheatsheet.png)
-
 ## Project 1
 
 [Simple - But Powerful - SQL Statements](/Project1/SQLstatements.sql)
@@ -106,3 +103,5 @@ Database For a Photo-Sharing App
 | photos   | Data related to photos   |
 | comments | Data related to comments |
 | likes    | Data related to likes    |
+
+![JOIN CHEATSHEET](joins_cheatsheet.png)
