@@ -152,3 +152,8 @@ VALUES
   SELECT url, username
   FROM photos
   JOIN users ON users.id = photos.user_id
+
+-- Retrieve photos with username of the user associated with the photo, including photos without a user
+SELECT url, username
+  FROM photos
+  LEFT JOIN users ON users.id = photos.user_id
