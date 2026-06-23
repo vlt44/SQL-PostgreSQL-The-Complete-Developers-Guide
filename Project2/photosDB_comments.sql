@@ -148,7 +148,7 @@ VALUES
   SELECT contents, url FROM comments
   JOIN photos ON photos.id = comments.photo_id;
 
--- Retrieve url and username of the user who uploaded the photo that was commented on
+-- Retrieve photos with username of the user associated with the photo
   SELECT url, username
   FROM photos
   JOIN users ON users.id = photos.user_id
