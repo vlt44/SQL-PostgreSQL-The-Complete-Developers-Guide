@@ -201,3 +201,16 @@ VALUES
   SELECT user_id, COUNT(id) AS num_commments_created
   FROM comments 
   GROUP BY user_id; 
+
+-- total number of rows
+  SELECT COUNT (*) FROM photots;
+
+-- total number of comments per user
+  SELECT user_id, COUNT(*)
+  FROM comments
+  GROUP BY user_id;
+
+  -- find the number of comments per photo
+  SELECT phot_id, COUNT(*)
+  FROM comments
+  GROUP BY photo_id;
