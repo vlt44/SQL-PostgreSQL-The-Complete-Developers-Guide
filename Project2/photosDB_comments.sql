@@ -203,7 +203,7 @@ VALUES
   GROUP BY user_id; 
 
 -- total number of rows
-  SELECT COUNT (*) FROM photots;
+  SELECT COUNT (*) FROM photos;
 
 -- total number of comments per user
   SELECT user_id, COUNT(*)
@@ -211,6 +211,6 @@ VALUES
   GROUP BY user_id;
 
   -- find the number of comments per photo
-  SELECT phot_id, COUNT(*)
+  SELECT photo_id, COUNT(*)
   FROM comments
   GROUP BY photo_id;
