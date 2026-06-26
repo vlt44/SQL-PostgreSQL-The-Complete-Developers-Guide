@@ -728,3 +728,13 @@ VALUES
   (27, 56, false),
   (36, 95, false),
   (3, 32, true);
+
+-- Retrieve all products ordered by price in ascending order
+SELECT *
+FROM products
+ORDER BY price;
+
+-- Retrieve all products ordered by price in descending order
+SELECT *
+FROM products
+ORDER BY price DESC;
