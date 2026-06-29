@@ -823,3 +823,18 @@ INTERSECT ALL
   ORDER BY price / weight DESC
   LIMIT 5
 );
+
+-- Rows that are in the top 5 most expensive products but not in the top 5 most expensive products based on the ratio of price to weight
+(
+  SELECT *
+  FROM products
+  ORDER BY price DESC
+  LIMIT 5
+)
+EXCEPT
+(
+  SELECT *
+  FROM products
+  ORDER BY price / weight DESC
+  LIMIT 5
+);
