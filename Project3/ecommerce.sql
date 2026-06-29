@@ -808,3 +808,18 @@ UNION ALL
   ORDER BY price / weight DESC
   LIMIT 5
 );
+
+-- Rows that are in both the top 5 most expensive products and the top 5 most expensive products based on the ratio of price to weight
+(
+  SELECT *
+  FROM products
+  ORDER BY price DESC
+  LIMIT 5
+)
+INTERSECT ALL
+(
+  SELECT *
+  FROM products
+  ORDER BY price / weight DESC
+  LIMIT 5
+);
