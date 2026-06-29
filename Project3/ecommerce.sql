@@ -791,3 +791,20 @@ FROM products
 ORDER BY price
 LIMIT 20
 OFFSET 20;
+
+-- Retrieve the top 5 most expensive products
+-- Retrieve the top 5 most expensive products based on the ratio of price to weight
+
+(
+  SELECT *
+  FROM products
+  ORDER BY price DESC
+  LIMIT 5
+);
+UNION
+(
+  SELECT *
+  FROM products
+  ORDER BY price / weight DESC
+  LIMIT 5
+);
