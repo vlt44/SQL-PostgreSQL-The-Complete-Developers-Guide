@@ -801,7 +801,7 @@ OFFSET 20;
   ORDER BY price DESC
   LIMIT 5
 );
-UNION
+UNION ALL
 (
   SELECT *
   FROM products
