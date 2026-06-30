@@ -838,3 +838,12 @@ EXCEPT
   ORDER BY price / weight DESC
   LIMIT 5
 );
+
+// Retrieve all products that are more expensive than the most expensive product in the 'Toys' department
+SELECT name, price
+FROM products
+WHERE price > (
+  SELECT MAX(price)
+  FROM products
+  WHERE department = 'Toys'
+);
