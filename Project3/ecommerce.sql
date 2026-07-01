@@ -847,3 +847,7 @@ WHERE price > (
   FROM products
   WHERE department = 'Toys'
 );
+
+// Get one single value
+SELECT MAX(price)
+FROM products;
