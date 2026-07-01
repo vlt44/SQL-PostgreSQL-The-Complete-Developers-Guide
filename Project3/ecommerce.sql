@@ -851,3 +851,19 @@ WHERE price > (
 // Get one single value
 SELECT MAX(price)
 FROM products;
+
+// Get name and price of all products that are more expensive than 300, along with the maximum price of all products
+SELECT name, price, (
+  SELECT MAX(price)
+  FROM products
+)
+FROM products
+WHERE price > 300;
+
+SELECT name, price, (
+  SELECT price
+  FROM products
+  WHERE id = 3
+)
+FROM products
+WHERE price > 300;
