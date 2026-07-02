@@ -839,7 +839,7 @@ EXCEPT
   LIMIT 5
 );
 
-// Retrieve all products that are more expensive than the most expensive product in the 'Toys' department
+-- Retrieve all products that are more expensive than the most expensive product in the 'Toys' department
 SELECT name, price
 FROM products
 WHERE price > (
@@ -848,11 +848,11 @@ WHERE price > (
   WHERE department = 'Toys'
 );
 
-// Get one single value
+-- Get one single value
 SELECT MAX(price)
 FROM products;
 
-// Get name and price of all products that are more expensive than 300, along with the maximum price of all products
+--  Get name and price of all products that are more expensive than 300, along with the maximum price of all products
 SELECT name, price, (
   SELECT MAX(price)
   FROM products
