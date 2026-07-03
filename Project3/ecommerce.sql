@@ -895,3 +895,22 @@ FROM (
   FROM orders
   GROUP BY user_id
 ) AS user_order_counts;
+
+-- Retrieve the first names of users who have ordered the product with id 3; 
+-- Both queries return the same result, but the first query uses a subquery in the join clause
+-- Second query uses a where clause to filter the results after the join.
+SELECT first_name
+FROM users
+JOIN (
+  SELECT user_id
+  FROM orders
+  WHERE product_id = 3
+) AS o
+ON o.user_id = users.id;
+
+
+SELECT first_name
+FROM users
+JOIN orders
+ON orders.user_id = users.id
+WHERE orders.product_id = 3;
