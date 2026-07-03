@@ -17,7 +17,6 @@ CREATE TABLE orders (
   paid BOOLEAN
 );
  
- 
 INSERT INTO users (first_name, last_name) 
 VALUES 
   ('Simone', 'Biles'),
@@ -70,7 +69,6 @@ VALUES
   ('Julianne', 'McNamara'),
   ('Kathy', 'Johnson'),
   ('Bart', 'Conner');
- 
  
 INSERT INTO products (name, department, price, weight)
 VALUES
@@ -174,7 +172,6 @@ VALUES
   ('Practical Steel Shoes', 'Toys', 947.00, 14),
   ('Handcrafted Rubber Shoes', 'Sports', 275.00, 6),
   ('Intelligent Cotton Gloves', 'Home', 447.00, 29);
- 
  
 INSERT INTO orders (user_id, product_id, paid)
 VALUES
@@ -794,7 +791,6 @@ OFFSET 20;
 
 -- Retrieve the top 5 most expensive products
 -- Retrieve the top 5 most expensive products based on the ratio of price to weight
-
 (
   SELECT *
   FROM products
@@ -907,7 +903,6 @@ JOIN (
   WHERE product_id = 3
 ) AS o
 ON o.user_id = users.id;
-
 
 SELECT first_name
 FROM users
