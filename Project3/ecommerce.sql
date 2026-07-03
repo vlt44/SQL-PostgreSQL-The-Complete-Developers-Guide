@@ -868,7 +868,7 @@ SELECT name, price, (
 FROM products
 WHERE price > 300;
 
-// Retrieve all products that have a price to weight ratio greater than 15
+-- Retrieve all products that have a price to weight ratio greater than 15
 SELECT name, price_weight_ratio
 FROM (
   SELECT name, price / weight AS price_weight_ratio
@@ -882,3 +882,17 @@ FROM products;
 
 SELECT *
 FROM (SELECT MAX(price) FROM products) AS max_price_product;
+
+-- Retrieve the number of orders placed by each user
+SELECT user_id, COUNT(*)
+FROM orders
+GROUP BY user_id;
+
+// Retrieve the average number of orders
+SELECT AVG(order_count)
+FROM (
+  SELECT user_id, COUNT(*) AS order_count
+  FROM orders
+  GROUP BY user_id
+  AS user_order_counts
+)
