@@ -876,3 +876,9 @@ FROM (
 ) AS products_with_ratio
 WHERE price_weight_ratio > 15;
 
+-- Statements with the same result, but different syntax, retrieve the maximum price of all products
+SELECT MAX(price)
+FROM products;
+
+SELECT *
+FROM (SELECT MAX(price) FROM products) AS max_price_product;
