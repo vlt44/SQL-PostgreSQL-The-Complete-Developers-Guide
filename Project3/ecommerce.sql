@@ -909,3 +909,16 @@ FROM users
 JOIN orders
 ON orders.user_id = users.id
 WHERE orders.product_id = 3;
+
+-- single column of values, retrieve the ids of all products that have a price to weight ratio greater than 50
+SELECT id
+from products
+where price / weight > 50;
+
+SELECT id 
+FROM orders
+WHERE product_id IN (
+  SELECT id
+  FROM products
+  WHERE price / weight > 50
+);
