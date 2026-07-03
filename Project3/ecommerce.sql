@@ -867,3 +867,12 @@ SELECT name, price, (
 )
 FROM products
 WHERE price > 300;
+
+// Retrieve all products that have a price to weight ratio greater than 15
+SELECT name, price_weight_ratio
+FROM (
+  SELECT name, price / weight AS price_weight_ratio
+  FROM products
+) AS products_with_ratio
+WHERE price_weight_ratio > 15;
+
