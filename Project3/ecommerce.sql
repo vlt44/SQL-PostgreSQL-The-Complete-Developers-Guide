@@ -922,3 +922,12 @@ WHERE product_id IN (
   FROM products
   WHERE price / weight > 50
 );
+
+-- Show all products that are more expensive than the average price of all products
+SELECT name 
+FROM products
+WHERE price > (
+  SELECT AVG(price)
+  FROM products
+);
+
