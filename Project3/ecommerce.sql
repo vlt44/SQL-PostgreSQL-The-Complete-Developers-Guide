@@ -931,3 +931,16 @@ WHERE price > (
   FROM products
 );
 
+-- Single column of values, retrieve the departments of all products that have a price less than 100
+SELECT department
+FROM products
+WHERE price < 100;
+
+-- Retrieve the names and departments of all products that have a price less than 100
+SELECT name, department
+FROM products
+WHERE department NOT IN (
+  SELECT department
+  FROM products
+  WHERE price < 100
+);
