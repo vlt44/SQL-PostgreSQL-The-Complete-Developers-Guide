@@ -161,14 +161,15 @@ LIMIT / OFFSET
 `INTERSECT` = AND  
 `EXCEPT` = NOT
 
-## Project 1
+## Project: [Simple - But Powerful - SQL Statements](/Project1/SQLstatements.sql)
 
-[Simple - But Powerful - SQL Statements](/Project1/SQLstatements.sql)
+- Filtering Records
 
-## Project 2
+## Project: [Photo Sharing DB](/Project2/photosDB_comments.sql)
 
-[Photo Sharing DB](/Project2/)
-Database For a Photo-Sharing App
+- Working with Tables
+- Relating Records with Joins
+- Aggregation of Records
 
 | Tables   | Description              |
 | -------- | ------------------------ |
@@ -177,4 +178,14 @@ Database For a Photo-Sharing App
 | comments | Data related to comments |
 | likes    | Data related to likes    |
 
+<br/>
+
 ![JOIN CHEATSHEET](joins_cheatsheet.png)
+
+## Project: [Working with Large Datasets](/Project3/ecommerce.sql)
+
+- Sorting Records
+- Union and Intersection with Sets
+- Assembling Queries with SubQueries
+- Selcting Distinct Records
+- Utility Operators, Keywords, and Functions
