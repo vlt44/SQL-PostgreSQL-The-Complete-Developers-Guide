@@ -954,10 +954,10 @@ WHERE price > ALL (
   WHERE department = 'Industrial'
 );
 
-SELELCT name, department, price
+SELECT name, department, price
 FROM products
 WHERE price >  SOME (
   SELECT price
-  FROM product
+  FROM products
   WHERE department = 'Industrial'
 );
