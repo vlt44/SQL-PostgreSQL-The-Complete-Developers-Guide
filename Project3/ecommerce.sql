@@ -944,3 +944,12 @@ WHERE department NOT IN (
   FROM products
   WHERE price < 100
 );
+
+-- Retrieve all the products that are more expensive than all the products in the 'Industrial' department
+SELECT name, department, price
+FROM products
+WHERE price > ALL (
+  SELECT price
+  FROM products
+  WHERE department = 'Industrial'
+);
