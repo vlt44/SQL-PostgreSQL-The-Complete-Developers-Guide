@@ -953,3 +953,11 @@ WHERE price > ALL (
   FROM products
   WHERE department = 'Industrial'
 );
+
+SELELCT name, department, price
+FROM products
+WHERE price >  SOME (
+  SELECT price
+  FROM product
+  WHERE department = 'Industrial'
+);
