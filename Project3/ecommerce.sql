@@ -970,3 +970,10 @@ WHERE price = (
   FROM products AS p2
   WHERE p1.department = p2.department
 );
+
+SELECT name, (
+  SELECT 
+  FROM orders AS o1
+  WHERE o1.product_id = p1.id
+)
+FROM products AS p1
