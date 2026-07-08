@@ -189,3 +189,35 @@ LIMIT / OFFSET
 - Assembling Queries with SubQueries
 - Selcting Distinct Records
 - Utility Operators, Keywords, and Functions
+
+<br/>
+
+| Operator in the WHERE clause | Structure of data the subquery must return |
+| ---------------------------- | ------------------------------------------ |
+| `>`                          | Single value                               |
+| `<`                          | Single value                               |
+| `>=`                         | Single value                               |
+| `<=`                         | Single value                               |
+| `=`                          | Single value                               |
+| `<>` or `!=`                 | Single value                               |
+| `IN`                         | Single column                              |
+| `NOT IN`                     | Single column                              |
+
+<br/>
+
+| Operator in the WHERE clause | Structure of data the subquery must return |
+| ---------------------------- | ------------------------------------------ |
+| `> ALL/SOME/ANY`             | Single column                              |
+| `< ALL/SOME/ANY`             | Single column                              |
+| `>= ALL/SOME/ANY`            | Single column                              |
+| `<= ALL/SOME/ANY`            | Single column                              |
+| `= ALL/SOME/ANY`             | Single column                              |
+| `<> ALL/SOME/ANY`            | Single column                              |
+
+<br/>
+
+| If your WHERE clause uses...          | Your subquery must return... |
+| ------------------------------------- | ---------------------------- |
+| `>`, `<`, `>=`, `<=`, `=`, `<>`, `!=` | A single value               |
+| `IN`, `NOT IN`                        | A single column              |
+| `ALL`, `SOME`, `ANY`                  | A single column              |
