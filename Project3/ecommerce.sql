@@ -972,8 +972,19 @@ WHERE price = (
 );
 
 SELECT name, (
-  SELECT 
+  SELECT COUNT(*)
   FROM orders AS o1
   WHERE o1.product_id = p1.id
-)
-FROM products AS p1
+) AS num_orders
+FROM products AS p1;
+
+-- Show the maximum price of all products
+SELECT (
+  SELECT MAX(price) FROM products
+);
+
+SELECT (
+  SELECT MAX(price) FROM products
+) / (
+  SELECT MIN(price) FROM products
+);
