@@ -31,6 +31,13 @@ The course introduces a simple framework for designing relational databases:
 3. **Select appropriate data types**
    - What type of data should each property contain?
 
+## Project: [Simple - But Powerful - SQL Statements](/Project1/SQLstatements.sql)
+
+### Objective
+
+- Fundamentals
+- Filtering Records
+
 #### What Tables Should We Make?
 
 - Common features (like authentication, comments, etc) are frequently built with conventional table names and columns
@@ -65,6 +72,25 @@ A foreign key creates a relationship between two tables by referencing the prima
 - Name varies, usually called something like `xyz_id`
 - Exactly equal to the primary key of the referenced row
 - Will change if the relationship changes
+
+## Project: [Photo Sharing DB](/Project2/photosDB_comments.sql)
+
+### Objective
+
+- Working with Tables
+- Relating Records with Joins
+- Aggregation of Records
+
+| Tables   | Description              |
+| -------- | ------------------------ |
+| users    | Data related to users    |
+| photos   | Data related to photos   |
+| comments | Data related to comments |
+| likes    | Data related to likes    |
+
+<br/>
+
+![JOIN CHEATSHEET](joins_cheatsheet.png)
 
 ### Joins
 
@@ -161,28 +187,9 @@ LIMIT / OFFSET
 `INTERSECT` = AND  
 `EXCEPT` = NOT
 
-## Project: [Simple - But Powerful - SQL Statements](/Project1/SQLstatements.sql)
-
-- Filtering Records
-
-## Project: [Photo Sharing DB](/Project2/photosDB_comments.sql)
-
-- Working with Tables
-- Relating Records with Joins
-- Aggregation of Records
-
-| Tables   | Description              |
-| -------- | ------------------------ |
-| users    | Data related to users    |
-| photos   | Data related to photos   |
-| comments | Data related to comments |
-| likes    | Data related to likes    |
-
-<br/>
-
-![JOIN CHEATSHEET](joins_cheatsheet.png)
-
 ## Project: [Working with Large Datasets](/Project3/ecommerce.sql)
+
+### Objective
 
 - Sorting Records
 - Union and Intersection with Sets
