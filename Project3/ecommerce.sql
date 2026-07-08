@@ -988,3 +988,15 @@ SELECT (
 ) / (
   SELECT MIN(price) FROM products
 );
+
+-- Retrieve all unique departments
+SELECT DISTINCT department
+FROM products;
+
+-- Number of unique departments
+SELECT COUNT(DISTINCT department)
+FROM products;
+
+-- Retrieve the unique combination of department and name
+SELECT DISTINCT department. name
+FROM products
