@@ -998,5 +998,13 @@ SELECT COUNT(DISTINCT department)
 FROM products;
 
 -- Retrieve the unique combination of department and name
-SELECT DISTINCT department. name
-FROM products
+SELECT DISTINCT department, name
+FROM products;
+
+-- Compute cost to ship each item
+SELECT name, weight, GREATEST(30, 2 * weight)
+FROM products;
+
+-- price is the least of the product price *0.5 or 400;
+SELECT name, price, LEAST(price * 0.5, 400)
+FROM products;
