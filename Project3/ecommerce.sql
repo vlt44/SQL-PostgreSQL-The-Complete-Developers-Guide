@@ -1005,6 +1005,14 @@ FROM products;
 SELECT name, weight, GREATEST(30, 2 * weight)
 FROM products;
 
--- price is the least of the product price *0.5 or 400;
+-- Price is the least of the product price *0.5 or 400;
 SELECT name, price, LEAST(price * 0.5, 400)
+FROM products;
+
+SELECT name, price, 
+CASE 
+  WHEN price > 600 THEN 'High'
+  WHEN price > 300 THEN 'Medium'
+  ELSE 'Low'
+END
 FROM products;
