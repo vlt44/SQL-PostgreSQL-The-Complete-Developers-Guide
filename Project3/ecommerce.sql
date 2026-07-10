@@ -1009,6 +1009,7 @@ FROM products;
 SELECT name, price, LEAST(price * 0.5, 400)
 FROM products;
 
+-- Case statement to categorize products based on price
 SELECT name, price, 
 CASE 
   WHEN price > 600 THEN 'High'
