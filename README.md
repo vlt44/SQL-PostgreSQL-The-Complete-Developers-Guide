@@ -229,4 +229,114 @@ LIMIT / OFFSET
 | `IN`, `NOT IN`                        | A single column              |
 | `ALL`, `SOME`, `ANY`                  | A single column              |
 
-## Project: [Postgres](/Project4/validations.sql)
+## Project: [PostgreSQL](/Project4/validations.sql)
+
+### Objective
+
+- pgAdmin
+- Data Types
+
+#### Categories
+
+- Numbers
+- Currency
+- Binary
+- Date/Time
+- Character
+- JSON
+- Geometric
+- Range
+- Arrays
+- Boolean
+- XML
+- UUID
+
+### Numeric Types
+
+#### Numbers without any decimal points
+
+| Data Type  | Range                                            |
+| ---------- | ------------------------------------------------ |
+| `smallint` | `-32768` to `+32767`                             |
+| `integer`  | `-2147583648` to `2147483647`                    |
+| `bigint`   | `-9223372036854775808` to `+9223372036854775807` |
+
+#### No decimal point, auto increment
+
+| Data Type     | Range                        |
+| ------------- | ---------------------------- |
+| `smallserial` | `1` to `32767`               |
+| `serial`      | `1` to `2147483647`          |
+| `bigserial`   | `1` to `9223372036854775807` |
+
+#### Number with decimal points
+
+| Data Type          | Range / Precision                                       |
+| ------------------ | ------------------------------------------------------- |
+| `decimal`          | `131072` digits before decimal point, `16383` after     |
+| `numeric`          | `131072` before decimal point, `16383` after            |
+| `real`             | `1E-37` to `1E37` with at least `6` places precision    |
+| `double precision` | `1E-307` to `1E308` with at least `15` places precision |
+| `float`            | Same as `real` or `double precision`                    |
+
+#### Numeric Types Fast Rules
+
+| If you need to...                                                                       | Use                |
+| --------------------------------------------------------------------------------------- | ------------------ |
+| `'id'` column of any table                                                              | `serial`           |
+| Need to store a number without a decimal                                                | `integer`          |
+| Need to store a number **with a decimal and this data needs to be very accurate**       | `numeric`          |
+| Need to store a number **with a decimal and the decimal doesn't make a big difference** | `double precision` |
+
+### Character Types
+
+| Data Type     | Description                                                                      |
+| ------------- | -------------------------------------------------------------------------------- |
+| `CHAR(5)`     | Store some characters, length will always be `5` even if PG has to insert spaces |
+| `VARCHAR`     | Store any length of string                                                       |
+| `VARCHAR(40)` | Store a string up to `40` characters, automatically remove extra characters      |
+| `TEXT`        | Store any length of string                                                       |
+
+### Boolean Types
+
+| Values                              | Stored As |
+| ----------------------------------- | --------- |
+| `true`, `yes`, `on`, `1`, `t`, `y`  | `TRUE`    |
+| `false`, `no`, `off`, `0`, `f`, `n` | `FALSE`   |
+| `null`                              | `NULL`    |
+
+### Date
+
+All of the following are stored as the same date.
+
+| Input               | Stored As          |
+| ------------------- | ------------------ |
+| `1980-11-20`        | `20 November 1980` |
+| `Nov-20-1980`       | `20 November 1980` |
+| `20-Nov-1980`       | `20 November 1980` |
+| `1980-November-20`  | `20 November 1980` |
+| `November 20, 1980` | `20 November 1980` |
+
+#### Time With Time Zone
+
+| Input          | Stored As     |
+| -------------- | ------------- |
+| `01:23 AM EST` | `01:23-05:00` |
+| `05:23 PM PST` | `17:23-08:00` |
+| `05:23 PM UTC` | `17:23+00:00` |
+
+#### Timestamp With Time Zone
+
+| Input                      | Stored As                |
+| -------------------------- | ------------------------ |
+| `Nov-20-1980 05:23 PM PST` | `1980-11-20 18:23:00-07` |
+
+#### Interval
+
+Think of an interval as a **duration of time**.
+
+| Input         | Stored As                 |
+| ------------- | ------------------------- |
+| `1 day`       | `1 day`                   |
+| `1 D`         | `1 day`                   |
+| `1 D 1 M 1 S` | `1 day 1 minute 1 second` |
