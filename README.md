@@ -228,3 +228,5 @@ LIMIT / OFFSET
 | `>`, `<`, `>=`, `<=`, `=`, `<>`, `!=` | A single value               |
 | `IN`, `NOT IN`                        | A single column              |
 | `ALL`, `SOME`, `ANY`                  | A single column              |
+
+## Project: [Postgres](/Project4/validations.sql)
