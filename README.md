@@ -333,3 +333,13 @@ Think of an interval as a **duration of time**.
 | `1 day`       | `1 day`                   |
 | `1 D`         | `1 day`                   |
 | `1 D 1 M 1 S` | `1 day 1 minute 1 second` |
+
+### Database-Side Validation & Constraints
+
+Row-Level Validation
+
+check for when a row is being inserted/updated
+
+- is value defined
+- is a value unique in its column
+- is a value >, <, >=, <=, = some other value
