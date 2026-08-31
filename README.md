@@ -234,24 +234,17 @@ LIMIT / OFFSET
 ### Objective
 
 - pgAdmin
-- Data Types
+- Complex Data Types
+- Database-Side Validation & Constraints
 
-#### Categories
+### Complex Data Types
 
-- Numbers
-- Currency
-- Binary
-- Date/Time
-- Character
-- JSON
-- Geometric
-- Range
-- Arrays
-- Boolean
-- XML
-- UUID
+#### Numeric Types Fast Rules
 
-### Numeric Types
+- `id` column of any table -> mark column as `serial`
+- number w/out intergere -> mark column as `interger`
+- number w/ decimal -> mark column as `numeric` \*weight of decimal important
+- number w/ decimal -> mark column as `double precision` \*weight of decimal not important
 
 #### Numbers without any decimal points
 
@@ -288,7 +281,7 @@ LIMIT / OFFSET
 | Need to store a number **with a decimal and this data needs to be very accurate**       | `numeric`          |
 | Need to store a number **with a decimal and the decimal doesn't make a big difference** | `double precision` |
 
-### Character Types
+#### Character Types
 
 | Data Type     | Description                                                                      |
 | ------------- | -------------------------------------------------------------------------------- |
@@ -297,7 +290,7 @@ LIMIT / OFFSET
 | `VARCHAR(40)` | Store a string up to `40` characters, automatically remove extra characters      |
 | `TEXT`        | Store any length of string                                                       |
 
-### Boolean Types
+#### Boolean Types
 
 | Values                              | Stored As |
 | ----------------------------------- | --------- |
@@ -305,7 +298,7 @@ LIMIT / OFFSET
 | `false`, `no`, `off`, `0`, `f`, `n` | `FALSE`   |
 | `null`                              | `NULL`    |
 
-### Date
+#### Date
 
 All of the following are stored as the same date.
 
