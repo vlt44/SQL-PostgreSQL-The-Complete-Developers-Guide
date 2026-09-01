@@ -16,3 +16,8 @@ VALUES
 UPDATE products
 SET price = 9999
 WHERE price IS NULL;
+
+-- Update price column to set NOT NULL constraint
+ALTER TABLE products
+ALTER COLUMN price
+SET NOT NULL;
