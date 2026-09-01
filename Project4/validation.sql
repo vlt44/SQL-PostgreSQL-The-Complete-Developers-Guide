@@ -12,6 +12,11 @@ INSERT INTO products (name, department, price, weight)
 VALUES
 ('Shirt', 'Clothing', 20, 1);
 
+-- Insert data into the table
+INSERT INTO products (name, department, price, weight) 
+VALUES
+('Pants', 'Clothing', 3);
+
 -- Update the price column if it is NULL
 UPDATE products
 SET price = 9999
