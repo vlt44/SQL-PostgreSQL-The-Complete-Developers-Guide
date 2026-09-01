@@ -7,7 +7,12 @@ CREATE TABLE products (
 	weight INT
 );
 
--- insert data into the table
+-- Insert data into the table
 INSERT INTO products (name, department, price, weight) 
 VALUES
-('Shirt', 'Clothing', 20, 1)
+('Shirt', 'Clothing', 20, 1);
+
+-- Update the price column if it is NULL
+UPDATE products
+SET price = 9999
+WHERE price IS NULL;
