@@ -343,3 +343,8 @@ check for when a row is being inserted/updated
 - is value defined
 - is a value unique in its column
 - is a value >, <, >=, <=, = some other value
+
+Create new database and table
+![pgAdmin Create](./Project4/pgAdmin_Create.png)
+Insert and update data
+![pgAdmin Insert](./Project4/pgAdmin_Insert.png)
