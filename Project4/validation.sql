@@ -53,3 +53,7 @@ CREATE TABLE products (
 -- ADD UNIQUE constraint after the table was created
 ALTER TABLE products
 ADD UNIQUE (name);
+
+-- Drop UNIQUE constraint
+ALTER TABLE products
+DROP CONSTRAINT products_name_key;
