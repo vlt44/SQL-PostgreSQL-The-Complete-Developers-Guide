@@ -57,3 +57,17 @@ ADD UNIQUE (name);
 -- Drop UNIQUE constraint
 ALTER TABLE products
 DROP CONSTRAINT products_name_key;
+
+-- Multi-column UNIQUE constraint when creating a table
+CREATE TABLE products (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(40),
+	department VARCHAR(40),
+	price INT,
+	weight INT,
+	UNIQUE (name, department)
+);
+
+-- Multi-column UNIQUE constraint after the table was created
+ALTER TABLE products
+ADD UNIQUE (name, department);
