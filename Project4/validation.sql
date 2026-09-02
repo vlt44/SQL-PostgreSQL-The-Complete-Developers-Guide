@@ -26,3 +26,17 @@ WHERE price IS NULL;
 ALTER TABLE products
 ALTER COLUMN price
 SET NOT NULL;
+
+-- When creating a table
+CREATE TABLE products (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(40) NOT NULL,
+	department VARCHAR(40) NOT NULL,
+	price INT DEFAULT 999,
+	weight INT
+);
+
+--  After the table was created
+ALTER TABLE products
+ALTER COLUMN price
+SET DEFAULT 9999;
