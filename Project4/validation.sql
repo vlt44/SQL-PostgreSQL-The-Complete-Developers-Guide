@@ -71,3 +71,16 @@ CREATE TABLE products (
 -- Multi-column UNIQUE constraint after the table was created
 ALTER TABLE products
 ADD UNIQUE (name, department);
+
+-- Check validation when creating a table
+CREATE TABLE products (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(40) NOT NULL,
+	department VARCHAR(40) NOT NULL,
+	price INT CHECK (price > 0),
+	weight INT
+);
+
+-- Check validation after the table was created
+ALTER TABLE products
+ADD CHECK (price > 0);
