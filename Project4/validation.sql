@@ -27,7 +27,7 @@ ALTER TABLE products
 ALTER COLUMN price
 SET NOT NULL;
 
--- When creating a table
+-- Add NULL constraint when creating a table
 CREATE TABLE products (
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(40) NOT NULL,
@@ -36,7 +36,20 @@ CREATE TABLE products (
 	weight INT
 );
 
---  After the table was created
+--  Add NULL constraint after the table was created
 ALTER TABLE products
 ALTER COLUMN price
 SET DEFAULT 9999;
+
+-- Add UNIQUE constraint when creating a table
+CREATE TABLE products (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(40) UNIQUE,
+	department VARCHAR(40) NOT NULL,
+	price INT,
+	weight INT
+);
+
+-- ADD UNIQUE constraint after the table was created
+ALTER TABLE products
+ADD UNIQUE (name);
