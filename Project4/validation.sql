@@ -84,3 +84,17 @@ CREATE TABLE products (
 -- Check validation after the table was created
 ALTER TABLE products
 ADD CHECK (price > 0);
+
+-- Check over multiple columns when creating a table
+CREATE TABLES orders (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(40) NOT NULL,
+	created_at TIMESTAMP NOT NULL,
+	est_delivery TIMESTAMP NOT NULL,
+	CHECK (est_delivery > created_at)
+);
+
+-- Test the check constraint by inserting a row that violates the constraint
+INSERT INTO orders (name, created_at, est_delivery)
+VALUES
+('Order1', '2024-06-01 10:00:00', '2024-06-02 10:00:00');
