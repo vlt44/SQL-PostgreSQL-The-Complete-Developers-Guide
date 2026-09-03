@@ -234,6 +234,7 @@ LIMIT / OFFSET
 ### Objective
 
 - pgAdmin
+- SQL Schema Design Tool
 - Complex Data Types
 - Database-Side Validation & Constraints
 
@@ -348,3 +349,27 @@ Create new database and table
 ![pgAdmin Create](./Project4/pgAdmin_Create.png)
 Insert and update data
 ![pgAdmin Insert](./Project4/pgAdmin_Insert.png)
+
+### Design IG
+
+#### 'Likes' System
+
+**Rules of 'Likes'**
+
+- Each user can like a specific post a single time.
+- A user should be able to "unlike" a post.
+- Need to be able to figure out how many users like a post.
+- Need to be able to list which users like a post.
+- Something besides a post might need to be liked (comments, maybe?).
+- We might want to think about "dislikes" or other kinds of reactions.
+
+**Tables**
+![IG tables](/Project5_DesignIG/designIGtables.png)
+
+**Solution Don't Do This**
+
+**Solution 1**
+
+**Solution 2**
+
+**Solution 3**
