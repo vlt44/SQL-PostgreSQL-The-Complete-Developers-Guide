@@ -352,9 +352,9 @@ Insert and update data
 
 ### Design IG
 
-#### 'Likes' System
+#### 'Likes' System Requirements
 
-**Rules of 'Likes'**
+![IG tables](/Project5_DesignIG/designIGtables.png)
 
 - Each user can like a specific post a single time.
 - A user should be able to "unlike" a post.
@@ -363,13 +363,17 @@ Insert and update data
 - Something besides a post might need to be liked (comments, maybe?).
 - We might want to think about "dislikes" or other kinds of reactions.
 
-**Tables**
-![IG tables](/Project5_DesignIG/designIGtables.png)
+**Don't Do This Solution**
 
-**Solution Don't Do This**
+Do not add likes Column to posts
 
-**Solution 1**
+- Can't ensure a user likes a post only once
+- Can't ensure a user can only unlike a post they've liked
+- Can't identify which users liked a post
+- Can't remove likes when a user is deleted
 
-**Solution 2**
+**Reaction System Solution**
 
-**Solution 3**
+**Polymorphic Association Solution**
+
+**Simpliest Solution**
