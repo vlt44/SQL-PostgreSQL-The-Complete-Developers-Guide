@@ -381,3 +381,9 @@ Do not add likes Column to posts
 #### -Polymorphic Association Solution-
 
 #### -Simpliest Solution-
+
+### `Mentions` System Requirements
+
+### `Hashtags` System Requirements
+
+### `Followers` System Requirements
