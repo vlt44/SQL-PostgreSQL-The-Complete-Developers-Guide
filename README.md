@@ -234,7 +234,6 @@ LIMIT / OFFSET
 ### Objective
 
 - pgAdmin
-- SQL Schema Design Tool
 - Complex Data Types
 - Database-Side Validation & Constraints
 
@@ -350,11 +349,16 @@ Create new database and table
 Insert and update data
 ![pgAdmin Insert](./Project4/pgAdmin_Insert.png)
 
-### Design IG
+## Project: [Design IG](./Project5_DesignIG)
 
-#### 'Likes' System Requirements
+### Objective
+
+- SQL Schema Design Tool
+- Database Design Patterns
 
 ![IG tables](/Project5_DesignIG/designIGtables.png)
+
+### `Likes` System Requirements
 
 - Each user can like a specific post a single time.
 - A user should be able to "unlike" a post.
@@ -363,7 +367,7 @@ Insert and update data
 - Something besides a post might need to be liked (comments, maybe?).
 - We might want to think about "dislikes" or other kinds of reactions.
 
-**Don't Do This Solution**
+#### -Don't Do This Solution-
 
 Do not add likes Column to posts
 
@@ -372,8 +376,8 @@ Do not add likes Column to posts
 - Can't identify which users liked a post
 - Can't remove likes when a user is deleted
 
-**Reaction System Solution**
+#### -Reaction System Solution-
 
-**Polymorphic Association Solution**
+#### -Polymorphic Association Solution-
 
-**Simpliest Solution**
+#### -Simpliest Solution-
