@@ -356,7 +356,7 @@ Insert and update data
 - SQL Schema Design Tool
 - Database Design Patterns
 
-![IG tables](/Project5_DesignIG/designIGtables.png)
+![IG tables](/Project5_DesignIG/img-designIGtables.png)
 
 ### `Likes` System Requirements
 
