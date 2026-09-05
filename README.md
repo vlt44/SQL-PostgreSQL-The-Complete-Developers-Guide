@@ -367,20 +367,35 @@ Insert and update data
 - Something besides a post might need to be liked (comments, maybe?).
 - We might want to think about "dislikes" or other kinds of reactions.
 
-#### -Don't Do This Solution-
+#### -Don't Do This! Solution-
 
-Do not add likes Column to posts
+Do not add `likes` Column to posts
 
 - Can't ensure a user likes a post only once
 - Can't ensure a user can only unlike a post they've liked
 - Can't identify which users liked a post
 - Can't remove likes when a user is deleted
 
-#### -Reaction System Solution-
+A `likes` table must be created or build a reactions table instead
+
+![Likes Table](/Project5_DesignIG/img-likesTable.png)
+![Reactions Table](/Project5_DesignIG/img-reactionsTable.png)
 
 #### -Polymorphic Association Solution-
 
+- Requires app to determine the meaning of each like
+  - A like can be a `post like` or a `comment like`.
+- Cannot use foreign key columns - `liked-id` is a plain integer.
+- Not recommended, but still commonly used.
+
+![Polymorphic Assoc Table](/Project5_DesignIG/img-polymorphicAssoc.png)
+`liked_type` points to a table, `liked_id` points to id in that table
+
+#### -Alternative Polymorphic Association Solution-
+
 #### -Simpliest Solution-
+
+---
 
 ### `Mentions` System Requirements
 
