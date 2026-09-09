@@ -424,7 +424,7 @@ COALESCE ((comment_id)::BOOLEAN::INTEGER, 0)
 - tag user in photo
 - tag user in caption
 
-![Mentions Table](/Project5_DesignIG/img-mentions.png)
+![Mentions Table](/Project5_DesignIG/img-mentionsTables.png)
 
 All tags could go in one table, things to consider:
 
