@@ -420,6 +420,17 @@ COALESCE ((comment_id)::BOOLEAN::INTEGER, 0)
 
 #### Requirements
 
+- Add caption and location to post
+- tag user in photo
+- tag user in caption
+
+![Mentions Table](/Project5_DesignIG/img-mentions.png)
+
+All tags could go in one table, things to consider:
+
+- Do you expect to query for caption_tags and photo_tags at different rates?
+- Will the meaning of a photo_tag change at some point?
+
 ### `Hashtags` System
 
 #### Requirements
