@@ -420,9 +420,9 @@ COALESCE ((comment_id)::BOOLEAN::INTEGER, 0)
 
 #### Requirements
 
-- Add caption and location to post
-- tag user in photo
-- tag user in caption
+- Add caption and location to post.
+- tag user in photo.
+- tag user in caption.
 
 ![Mentions Table](/Project5_DesignIG/img-mentionsTables.png)
 
@@ -444,3 +444,9 @@ All tags could go in one table, things to consider:
 ### `Followers` System
 
 #### Requirements
+
+- number of posts.
+- number of followers.
+- number of following.
+
+![Followers Table](/Project5_DesignIG/img-followersTable.png)
