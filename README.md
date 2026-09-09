@@ -435,6 +435,12 @@ All tags could go in one table, things to consider:
 
 #### Requirements
 
+- used in the search feature
+- search for posts that contains hashtags
+  \*\*could expanded on usage for which comments and users is using it
+
+![Mentions Table](/Project5_DesignIG/img-hashtagsTables.png)
+
 ### `Followers` System
 
 #### Requirements
