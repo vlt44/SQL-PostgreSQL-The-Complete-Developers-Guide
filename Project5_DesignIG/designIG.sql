@@ -1,0 +1,13 @@
+CREATE TABLE users (
+    user_id SERIAL PRIMARY KEY  ,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    username VARCHAR(30) NOT NULL UNIQUE,
+    bio VARCHAR(300),
+    avatar VARCHAR(200),
+    phone VARCHAR(25),
+    email VARCHAR(40),
+    password VARCHAR(50),
+    status VARCHAR(15),
+    CHECK(COALESCE(phone, email) IS NOT NULL)
+);
