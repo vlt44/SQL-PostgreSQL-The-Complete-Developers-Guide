@@ -19,6 +19,5 @@ CREATE TABLE posts (
     url VARCHAR(200) NOT NULL,
     caption VARCHAR(240),
     lat REAL CHECK(lat IS NULL OR (lat >= -90 AND lat <= 90)),
-    lng REAL CHECK(lng IS NULL OR (lng >= -180 AND lng <= 180)),
-
+    lng REAL CHECK(lng IS NULL OR (lng >= -180 AND lng <= 180))
 );

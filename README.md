@@ -450,3 +450,23 @@ All tags could go in one table, things to consider:
 - number of following.
 
 ![Followers Table](/Project5_DesignIG/img-followersTable.png)
+
+#### NOT NULL vs DEFAULT
+
+- **NOT NULL**
+  - A value must be provided.
+  - Empty strings are still values.
+
+- **DEFAULT**
+  - Provides a default value if an `INSERT` statement doesn't provide one.
+
+#### Choosing Constraints
+
+- **Value must always be provided** → `NOT NULL`
+- **Value is optional, but should always have a value** → `NOT NULL + DEFAULT`
+
+#### Validation
+
+- **Validation rules change frequently** → No validation
+- **Validation rules are complex** → No validation
+- **Need to ensure the correct type/domain of value** → Add validation
