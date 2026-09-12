@@ -462,11 +462,11 @@ All tags could go in one table, things to consider:
 
 #### Choosing Constraints
 
-- **Value must always be provided** → `NOT NULL`
-- **Value is optional, but should always have a value** → `NOT NULL + DEFAULT`
+- Value must always be provided → `NOT NULL`
+- Value is optional, but should always have a value → `NOT NULL + DEFAULT`
 
 #### Validation
 
-- **Validation rules change frequently** → No validation
-- **Validation rules are complex** → No validation
-- **Need to ensure the correct type/domain of value** → Add validation
+- Validation rules change frequently → No validation
+- Validation rules are complex → No validation
+- Need to ensure the correct type/domain of value → Add validation
