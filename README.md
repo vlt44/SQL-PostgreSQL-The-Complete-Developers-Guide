@@ -470,3 +470,12 @@ All tags could go in one table, things to consider:
 - Validation rules change frequently → No validation
 - Validation rules are complex → No validation
 - Need to ensure the correct type/domain of value → Add validation
+
+Exercise: Highest User ID
+![Highest User ID](/Project5_DesignIG/img-highestUserID.png)
+
+Exercise: Post By User
+![Post By User](/Project5_DesignIG/img-postByUser.png)
+
+Exercise: Likes Per User
+![Likes Per User](/Project5_DesignIG/img-likesPerUser.png)
