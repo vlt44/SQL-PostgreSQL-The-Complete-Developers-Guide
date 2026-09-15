@@ -94,7 +94,7 @@ ORDER BY id DESC
 LIMIT 3;
 
 -- Join the users and the post table. Show the userbane of user ID 200 and the captions of all posts they have created
-SELECT *
+SELECT username, caption
 FROM users
 JOIN posts ON posts.user_id = users.id
 WHERE posts.user_id = 200;
