@@ -98,3 +98,9 @@ SELECT username, caption
 FROM users
 JOIN posts ON posts.user_id = users.id
 WHERE posts.user_id = 200;
+
+-- Show each username and the number of 'like' that they have created
+SELECT username, COUNT(*)
+FROM users
+LEFT JOIN likes ON likes.user_id = users.id
+GROUP BY username
