@@ -27,7 +27,7 @@ CREATE TABLE comments (
     id SERIAL PRIMARY KEY,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    content VARCHAR(240) NOT NULL,
+    contents VARCHAR(240) NOT NULL,
     user_id INTEGER NOT NULL REFERENCES users(user_id) ON DELETE CASCADE,
     post_id INTEGER NOT NULL REFERENCES posts(id) ON DELETE CASCADE
 );
@@ -86,3 +86,9 @@ CREATE TABLE followers (
     follower_id INTEGER NOT NULL REFERENCES users(user_id) ON DELETE CASCADE,
     UNIQUE(leader_id, follower_id)
 );
+
+-- Select 3 users with the highest IDs from the users table
+SELECT * 
+FROM users
+ORDER BY id DESC
+LIMIT 3;
