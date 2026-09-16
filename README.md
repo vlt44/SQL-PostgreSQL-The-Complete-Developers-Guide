@@ -485,3 +485,16 @@ Exercise: Likes Per User
 ### Objective
 
 - Performance with Postgres
+
+#### Heaps, Blocks, and Tuples
+
+- [Database Page Layout Documentation](https://www.postgresql.org/docs/current/storage-page-layout.html)
+- hex editor
+
+How to look at the raw binary of our database file, the heap file we are working with.
+
+Map out the raw bits and bytes inside there and understand its purpose
+
+- Heap File contains all the data(rows) of our table
+- Tuple/Item is an individual row from the table
+- Block/Page the heap file is divided into many different 'blocks', storing some number of rows (8kb)
