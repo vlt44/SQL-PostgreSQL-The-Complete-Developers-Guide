@@ -2,7 +2,7 @@
 SHOW data_directory;
 
 -- List all databases
-SELECT old, datname
+SELECT oid, datname
 FROM pg_database;
 
 -- list of files representing objects in the database
