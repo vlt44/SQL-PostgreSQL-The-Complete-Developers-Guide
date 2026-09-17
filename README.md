@@ -499,6 +499,28 @@ Map out the raw bits and bytes inside there and understand its purpose
 - Tuple/Item is an individual row from the table
 - Block/Page the heap file is divided into many different 'blocks', storing some number of rows (8kb)
 
+#### Locating files
+
 ![Database List](/Project6/img-dbList.png)
 ![Object List](/Project6/img-objList.png)
 ![User Object using HEX editor](/Project6/img-usersObjHEX.png)
+
+#### Mapping
+
+PageHeaderData
+![PageHeaderData](/Project6/img-header.png)
+
+pd_lower
+![pd_lower](/Project6/img-pdLower.png)
+
+First ItemId
+![first ItemId](/Project6/img-firstItemId.png)
+
+Last ItemId
+![last ItemId](/Project6/img-lastItemId.png)
+
+Inspect ItemId
+![Inspect ItemId 1/2](/Project6/img-inspectItemId-A.png)
+![Inspect ItemId 2/2](/Project6/img-inspectItemId-B.png)
+
+Offset (number of bytes to from the start of the page to the first item)![Offset](/Project6/img-offset.png)
