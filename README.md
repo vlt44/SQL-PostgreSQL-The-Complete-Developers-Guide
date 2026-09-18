@@ -484,16 +484,11 @@ Exercise: Likes Per User
 
 ### Objective
 
-- Performance with Postgres
+- Heaps, Blocks, and Tuples
+- Map out raw binary of heap file
+- Hex editor
 
-#### Heaps, Blocks, and Tuples
-
-- [Database Page Layout Documentation](https://www.postgresql.org/docs/current/storage-page-layout.html)
-- hex editor
-
-How to look at the raw binary of our database file, the heap file we are working with.
-
-Map out the raw bits and bytes inside there and understand its purpose
+**[Database Page Layout Documentation](https://www.postgresql.org/docs/current/storage-page-layout.html)**
 
 - Heap File contains all the data(rows) of our table
 - Tuple/Item is an individual row from the table
@@ -505,7 +500,7 @@ Map out the raw bits and bytes inside there and understand its purpose
 ![Object List](/Project6/img-objList.png)
 ![User Object using HEX editor](/Project6/img-usersObjHEX.png)
 
-#### Mapping
+#### Mapping Page Layout
 
 PageHeaderData
 ![PageHeaderData](/Project6/img-header.png)
@@ -523,4 +518,5 @@ Inspect ItemId
 ![Inspect ItemId 1/2](/Project6/img-inspectItemId-A.png)
 ![Inspect ItemId 2/2](/Project6/img-inspectItemId-B.png)
 
-Offset (number of bytes to from the start of the page to the first item)![Offset](/Project6/img-offset.png)
+Offset (number of bytes from the start of the page to the first item)
+![Offset](/Project6/img-offset.png)
