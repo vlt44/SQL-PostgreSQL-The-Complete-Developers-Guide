@@ -10,3 +10,9 @@ SELECT * FROM pg_class;
 
 -- Find this user in users table
 SELECT * FROM users WHERE username = 'Gene76';
+
+-- Create an index on the username column
+CREATE INDEX ON users (username);
+
+-- Delete an index on the username column
+DROP INDEX users_username_idx;
