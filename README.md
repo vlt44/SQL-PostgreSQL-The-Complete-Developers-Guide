@@ -520,3 +520,24 @@ Inspect ItemId
 
 Offset (number of bytes from the start of the page to the first item)
 ![Offset](/Project6/img-offset.png)
+296 / 16 = 18.5
+
+Item looked up
+![First Item](/Project6/img-firstItem.png)
+
+#### Table Row Layout
+
+Header of Item
+![Header of Item](/Project6/img-headerOfItem.png)
+
+Start of Data Stored
+![Start of Data Stored](/Project6/img-startOfDataStored.png)
+
+The user id we have stored in the `id` column
+![User ID](/Project6/img-idData.png)
+
+Confirmation of user id
+![Confirmation of Data](/Project6/img-confirmUser.png)
+
+Get item length
+![Item Length](/Project6/img-itemLength.png)

@@ -5,5 +5,8 @@ SHOW data_directory;
 SELECT oid, datname
 FROM pg_database;
 
--- list of files representing objects in the database
+-- List of files representing objects in the database
 SELECT * FROM pg_class;
+
+-- Find this user in users table
+SELECT * FROM users WHERE username = 'Gene76';
