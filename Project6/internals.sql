@@ -21,3 +21,6 @@ DROP INDEX users_username_idx;
 EXPLAIN ANALYZE SELECT *
 FROM users
 WHERE username = 'Emil30';
+
+-- Get the size of the database
+SELECT pg_size_pretty(pg_database_size('users_username.idx'));
