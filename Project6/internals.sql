@@ -33,6 +33,7 @@ WHERE relkind = 'i';
 -- Create the pageinspect extension for more functionality 
 CREATE EXTENSION pageinspect;
 
+-- Retrieve information off the meta page of the index
 -- Inspect the index
 SELECT *
 FROM bt_metap('users_username_idx');
