@@ -29,3 +29,6 @@ SELECT pg_size_pretty(pg_database_size('users_username.idx'));
 SELECT relname, relkind
 FROM pg_class
 WHERE relkind = 'i';
+
+-- Create the pageinspect extension for more functionality 
+CREATE EXTENSION pageinspect;
