@@ -22,5 +22,10 @@ EXPLAIN ANALYZE SELECT *
 FROM users
 WHERE username = 'Emil30';
 
--- Get the size of the database
+-- Check the size of the index
 SELECT pg_size_pretty(pg_database_size('users_username.idx'));
+
+-- List all of the indexes in the database
+SELECT relname, relkind
+FROM pg_class
+WHERE relkind = 'i';
