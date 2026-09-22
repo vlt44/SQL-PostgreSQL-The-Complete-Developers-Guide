@@ -487,6 +487,7 @@ Exercise: Likes Per User
 - Heaps, Blocks, and Tuples
 - Map out raw binary of heap file
 - Hex editor
+- Indexes for Performances
 
 **[Database Page Layout Documentation](https://www.postgresql.org/docs/current/storage-page-layout.html)**
 
@@ -541,3 +542,20 @@ Confirmation of user id
 
 Get item length
 ![Item Length](/Project6/img-itemLength.png)
+
+#### PostgreSQL Index Types
+
+| Index       | Use Case                                                              |
+| ----------- | --------------------------------------------------------------------- |
+| **B-Tree**  | General-purpose index. Used most of the time.                         |
+| **Hash**    | Speeds up simple equality checks.                                     |
+| **GiST**    | Geometry and full-text search.                                        |
+| **SP-GiST** | Clustered data, such as dates where many rows may have the same year. |
+| **GIN**     | Columns containing arrays or JSON data.                               |
+| **BRIN**    | Specialized for very large datasets.                                  |
+
+Postgres automatically creates an index for the **primary key** column of every table.
+
+Postgres also automatically creates an index for any **`UNIQUE` constraint**.
+
+These don't get listed under 'indexes' in PGAdmin.
