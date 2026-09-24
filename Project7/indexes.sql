@@ -24,3 +24,7 @@ CREATE EXTENSION pageinspect;
 -- Inspect the index
 SELECT *
 FROM bt_metap('users_username_idx');
+
+-- B-tree, retrieve items from BT
+SELECT *
+FROM bt_page_items('users_username_idx', 3);
