@@ -28,3 +28,8 @@ FROM bt_metap('users_username_idx');
 -- B-tree, retrieve items from BT
 SELECT *
 FROM bt_page_items('users_username_idx', 3);
+
+-- Ghost column, ctid
+SELECT ctid, * 
+FROM users 
+WHERE username = 'Aaliyah.Hintz';
