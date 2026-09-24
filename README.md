@@ -543,6 +543,8 @@ Confirmation of user id
 Get item length
 ![Item Length](/Project6/img-itemLength.png)
 
+### Behind the Scenes of Indexes
+
 #### PostgreSQL Index Types
 
 | Index       | Use Case                                                              |
@@ -554,8 +556,10 @@ Get item length
 | **GIN**     | Columns containing arrays or JSON data.                               |
 | **BRIN**    | Specialized for very large datasets.                                  |
 
-Postgres automatically creates an index for the **primary key** column of every table.
+</br>
 
-Postgres also automatically creates an index for any **`UNIQUE` constraint**.
+- Postgres automatically creates an index for the **primary key** column of every table.
+- Postgres also automatically creates an index for any **`UNIQUE` constraint**.
+- These don't get listed under 'indexes' in PGAdmin.
 
-These don't get listed under 'indexes' in PGAdmin.
+`cdid`: lookup for leaf node in the heap file, except for the first row. The very first row is a pointer to the next leaf node.
