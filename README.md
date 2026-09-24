@@ -563,3 +563,11 @@ Get item length
 - These don't get listed under 'indexes' in PGAdmin.
 
 `cdid`: lookup for leaf node in the heap file, except for the first row. The very first row is a pointer to the next leaf node.
+
+### Basic & Advance Query Tuning
+
+### Simple & Recursive Common Table Expressions
+
+### Simplifying & Optimizing Queries with Views
+
+### Handling Concurrency & Reversibility with Transactions
