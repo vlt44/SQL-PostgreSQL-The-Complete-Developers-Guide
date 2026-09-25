@@ -566,6 +566,38 @@ Get item length
 
 ### Basic & Advance Query Tuning
 
+- [PostgreSQL Query Planning Documentation](https://www.postgresql.org/docs/current/runtime-config-query.html#RUNTIME-CONFIG-QUERY)
+
+**Query processing pipeline:** parse > rewrite > planner > execute
+
+**Cost** is amount of time to execute.
+
+**Benchmarking**
+
+- Explain: build a query plan
+- Explain Analyze: build query plan and run it
+  - rows with arrows are query nodes
+
+**Calculating Cost** (Index Lookup vs. Sequential Scan)
+
+Using Index: index jumps directly to the pages we are looking for
+
+Sequential Scan: requires reading the entire table sequentially, read every page.
+
+| Cost                   |  Default | Meaning                                                                              |
+| ---------------------- | -------: | ------------------------------------------------------------------------------------ |
+| `random_page_cost`     |    `4.0` | Fetching a random page is **4x as expensive** as fetching pages in order             |
+| `seq_page_cost`        |    `1.0` | Cost of fetching a page sequentially                                                 |
+| `cpu_tuple_cost`       |   `0.01` | Processing a single tuple (row) is **1% as expensive** as fetching a page in order   |
+| `cpu_index_tuple_cost` |  `0.005` | Processing a tuple from an index is **50% as expensive** as processing a real row    |
+| `cpu_operator_cost`    | `0.0025` | Running an operator or function is **50% as expensive** as processing an index tuple |
+
+I/O cost
+
+- CPU cost
+  =
+  Total estimated cost
+
 ### Simple & Recursive Common Table Expressions
 
 ### Simplifying & Optimizing Queries with Views
