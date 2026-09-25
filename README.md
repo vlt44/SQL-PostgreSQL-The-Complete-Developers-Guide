@@ -592,11 +592,11 @@ Sequential Scan: requires reading the entire table sequentially, read every page
 | `cpu_index_tuple_cost` |  `0.005` | Processing a tuple from an index is **50% as expensive** as processing a real row    |
 | `cpu_operator_cost`    | `0.0025` | Running an operator or function is **50% as expensive** as processing an index tuple |
 
-I/O cost
-
-- CPU cost
-  =
-  Total estimated cost
+- Random page access → expensive
+  - Sequential page access → cheaper
+    - Processing rows → cheaper still
+      - Processing index tuples → even cheaper
+        - Running operators/functions → cheapest
 
 ### Simple & Recursive Common Table Expressions
 
