@@ -614,4 +614,13 @@ Use when no benefit to keeping records in sperate tables and can't merge tables
 
 **Materialized Views:** Query that get executed only at specific times. Results are saved and can be referenced.
 
-### Handling Concurrency & Reversibility with Transactions
+#### Handling Concurrency & Reversibility with Transactions
+
+Run `BEGIN`
+
+Run `COMMIT` to merge changes back into main data pool
+
+Run `ROLLBACK` to dump all pending changes and delete separate workspace
+
+- a bad command will put transaction in an aborted state, must rollback
+- a crash will automatically rollback the transactoin
