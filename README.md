@@ -610,4 +610,8 @@ Sequential Scan: requires reading the entire table sequentially, read every page
 
 Use when no benefit to keeping records in sperate tables and can't merge tables
 
+**Views:** Query that gets executed every time you refer to it
+
+**Materialized Views:** Query that get executed only at specific times. Results are saved and can be referenced.
+
 ### Handling Concurrency & Reversibility with Transactions
