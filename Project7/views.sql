@@ -23,3 +23,13 @@ FROM users
 JOIN tags ON tags.user_id = users.id
 GROUP BY username
 ORDER BY COUNT(*) DESC;
+
+-- Show recent posts
+CREATE VIEW recent_posts AS (
+  SELECT *
+  FROM photos
+  ORDER BY created_at DESC
+  LIMIT 10
+);
+
+SELECT * FROM recent_posts;
