@@ -624,3 +624,11 @@ Run `ROLLBACK` to dump all pending changes and delete separate workspace
 
 - a bad command will put transaction in an aborted state, must rollback
 - a crash will automatically rollback the transactoin
+
+#### Schemas & Data Migrations
+
+#### Acessing From APIs & Patterns
+
+#### Security
+
+#### Testing
