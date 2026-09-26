@@ -33,3 +33,8 @@ CREATE VIEW recent_posts AS (
 );
 
 SELECT * FROM recent_posts;
+
+-- Show users that posted recently
+SELECT username
+FROM recent_posts
+JOIN users ON users.id = recent_posts.user_id;
