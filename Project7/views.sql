@@ -49,3 +49,35 @@ CREATE OR REPLACE VIEW recent_posts AS (
 
 -- Deleting view
 DROP VIEW recent_posts;
+
+-- For each week, show the number of likes that posts and comments recieved. 
+-- Use created_at date, not when like was made.
+SELECT 
+  date_trunc('week', COALESCE(post.created_at, comments.created_at)) AS week,
+  COUNT(post.id) AS number_of_post_likes,
+  COUNT(comment.id) AS number_of_comment_likes
+FROM likes
+LEFT JOIN posts ON posts.id = likes.post_id
+LEFT JOIN comments ON comments.id = likes.comment_id
+GROUP BY week
+ORDER BY week;
+
+--
+CREATE MATERIALIZED VIEW weekly_likes AS (
+  SELECT 
+    date_trunc('week', COALESCE (posts.created_at, comments. created_at)) AS week,
+    COUNT (posts.id) AS num_likes_for_posts,
+    COUNT (comments.id) A num_likes_for_comments
+FROM likes
+LEFT JOIN posts ON posts.id = likes.post_id
+LEFT JOIN comments ON comments.id = likes.comment_id
+GROUP BY week
+ORDER BY week
+) WITH DATA;
+
+SELECT * FROM weekly_likes;
+
+DELETE FROM posts 
+WHERE created_at < '2010-02-01';
+
+REFRESH MATERIALIZED VIEW weekly_likes;
