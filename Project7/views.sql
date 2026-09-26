@@ -38,3 +38,14 @@ SELECT * FROM recent_posts;
 SELECT username
 FROM recent_posts
 JOIN users ON users.id = recent_posts.user_id;
+
+-- Changing view
+CREATE OR REPLACE VIEW recent_posts AS (
+  SELECT *
+  FROM photos
+  ORDER BY created_at DESC
+  LIMIT 15
+);
+
+-- Deleting view
+DROP VIEW recent_posts;
