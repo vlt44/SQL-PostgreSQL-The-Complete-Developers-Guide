@@ -606,6 +606,8 @@ Sequential Scan: requires reading the entire table sequentially, read every page
   - simple form
   - recursive form useful for trees & graph-type data structures. Must use `UNION` keyword.
 
-### Queries with Views
+#### Queries with Views
+
+Use when no benefit to keeping records in sperate tables and can't merge tables
 
 ### Handling Concurrency & Reversibility with Transactions
