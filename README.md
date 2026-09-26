@@ -489,7 +489,7 @@ Exercise: Likes Per User
 - Hex editor
 - Indexes for Performances
 
-**[Database Page Layout Documentation](https://www.postgresql.org/docs/current/storage-page-layout.html)**
+**[PostgreSQL Database Page Layout Documentation](https://www.postgresql.org/docs/current/storage-page-layout.html)**
 
 - Heap File contains all the data(rows) of our table
 - Tuple/Item is an individual row from the table
@@ -564,9 +564,9 @@ Get item length
 
 `cdid`: lookup for leaf node in the heap file, except for the first row. The very first row is a pointer to the next leaf node.
 
-### Basic & Advance Query Tuning
+### Query Tuning
 
-- [PostgreSQL Query Planning Documentation](https://www.postgresql.org/docs/current/runtime-config-query.html#RUNTIME-CONFIG-QUERY)
+[PostgreSQL Query Planning Documentation](https://www.postgresql.org/docs/current/runtime-config-query.html#RUNTIME-CONFIG-QUERY)
 
 **Query processing pipeline:** parse > rewrite > planner > execute
 
@@ -574,8 +574,8 @@ Get item length
 
 **Benchmarking**
 
-- Explain: build a query plan
-- Explain Analyze: build query plan and run it
+- `EXPLAIN`: build a query plan
+- `EXPLAIN ANALYZE`: build query plan and run it
   - rows with arrows are query nodes
 
 **Calculating Cost** (Index Lookup vs. Sequential Scan)
@@ -598,8 +598,14 @@ Sequential Scan: requires reading the entire table sequentially, read every page
       - Processing index tuples → even cheaper
         - Running operators/functions → cheapest
 
-### Simple & Recursive Common Table Expressions
+#### Common Table Expressions
 
-### Simplifying & Optimizing Queries with Views
+- Defined with `WITH` before the main query
+- Produces a table we can refer to anywhere else
+- Two forms
+  - simple form
+  - recursive form useful for trees & graph-type data structures. Must use `UNION` keyword.
+
+### Queries with Views
 
 ### Handling Concurrency & Reversibility with Transactions
