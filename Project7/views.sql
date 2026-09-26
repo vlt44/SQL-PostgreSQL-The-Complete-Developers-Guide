@@ -10,3 +10,16 @@ JOIN (
 ) AS tags ON tags.user_id = users.id
 GROUP BY username
 ORDER BY COUNT(*) DESC;
+
+-- Show most popular users using view
+CREATE VIEW tags AS (
+  SELECT id, created_at, user_id, photo_id, 'photo_tag' AS type FROM photo_tags
+  UNION ALL
+  SELECT id, created_at, user_id, photo_id, 'caption_tag' AS type FROM caption_tags
+);
+
+SELECT username, COUNT(*)
+FROM users
+JOIN tags ON tags.user_id = users.id
+GROUP BY username
+ORDER BY COUNT(*) DESC;
