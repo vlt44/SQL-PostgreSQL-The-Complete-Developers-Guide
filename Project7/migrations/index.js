@@ -41,15 +41,21 @@ app.get('/posts', async (req, res) => {
   <h3>Create Post</h3>
   <div>
     <label>Latitude</label>
-    <input type="text">
+    <input type="text" name="lat">
   </div>
   <div>
     <label>Longitude</label>
-    <input type="text">
+    <input type="text" name="lng">
   </div>
   <button type="submit">Create</button>
   </form>
   `);
+});
+
+app.post('/posts', async (req, res) => {
+  const { lat, lng } = req.body;
+  await pool.query('INSERT INTO posts (lat, lng) VALUES ($1, $2);', [lat, lng]);
+  res.redirect('/posts');
 });
 
 app.listen(3005, () => {
