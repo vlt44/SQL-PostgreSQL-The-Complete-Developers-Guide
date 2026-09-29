@@ -9,18 +9,10 @@ export const shorthands = undefined;
  * @returns {Promise<void> | void}
  */
 export const up = (pgm) => {
-  pgm.createTable('comments', {
-    id: { type: 'serial', primaryKey: true },
-    created_at: {
-      type: 'timestamp with time zone',
-      default: pgm.func('CURRENT_TIMESTAMP'),
-    },
-    updated_at: {
-      type: 'timestamp with time zone',
-      default: pgm.func('CURRENT_TIMESTAMP'),
-    },
-    contents: { type: 'varchar(240)', notNull: true },
-  });
+  pgm.sql(`
+  ALTER TABLE comments
+  RENAME COLUMN contents TO body;
+  `);
 };
 
 /**
@@ -29,5 +21,8 @@ export const up = (pgm) => {
  * @returns {Promise<void> | void}
  */
 export const down = (pgm) => {
-  pgm.dropTable('comments');
+  pgm.sql(`
+  ALTER TABLE comments
+  RENAME COLUMN body TO contents;
+  `);
 };
