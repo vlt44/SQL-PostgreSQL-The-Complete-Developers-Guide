@@ -625,9 +625,21 @@ Run `ROLLBACK` to dump all pending changes and delete separate workspace
 - a bad command will put transaction in an aborted state, must rollback
 - a crash will automatically rollback the transactoin
 
-#### Schemas & Data Migrations
+#### Schema & Data Migrations
 
-#### Acessing From APIs & Patterns
+Making Changes to Your Database Structure
+
+- Changes to the DB structure and changes to clients need to be made at precisely the same time
+
+`UP` contains a statement that advance, or upgrades, the structure of the DB
+
+`DOWN` contains a statement that exactly undo's the `UP` command
+
+Schema Migration: add/drop columns
+
+Data Migration: copy data
+
+#### Accessing From APIs & Patterns
 
 #### Security
 
