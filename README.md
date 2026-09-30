@@ -507,51 +507,51 @@ Exercise: Likes Per User
 
 #### Locating files
 
-![Database List](/Project6/img-dbList.png)
-![Object List](/Project6/img-objList.png)
-![User Object using HEX editor](/Project6/img-usersObjHEX.png)
+![Database List](./Project_6_Internals/img-dbList.png)
+![Object List](./Project_6_Internals/img-objList.png)
+![User Object using HEX editor](./Project_6_Internals/img-usersObjHEX.png)
 
 #### Mapping Page Layout
 
 PageHeaderData
-![PageHeaderData](/Project6/img-header.png)
+![PageHeaderData](./Project_6_Internals/img-header.png)
 
 pd_lower
-![pd_lower](/Project6/img-pdLower.png)
+![pd_lower](./Project_6_Internals/img-pdLower.png)
 
 First ItemId
-![first ItemId](/Project6/img-firstItemId.png)
+![first ItemId](./Project_6_Internals/img-firstItemId.png)
 
 Last ItemId
-![last ItemId](/Project6/img-lastItemId.png)
+![last ItemId](./Project_6_Internals/img-lastItemId.png)
 
 Inspect ItemId
-![Inspect ItemId 1/2](/Project6/img-inspectItemId-A.png)
-![Inspect ItemId 2/2](/Project6/img-inspectItemId-B.png)
+![Inspect ItemId 1/2](./Project_6_Internals/img-inspectItemId-A.png)
+![Inspect ItemId 2/2](./Project_6_Internals/img-inspectItemId-B.png)
 
 Offset (number of bytes from the start of the page to the first item)
-![Offset](/Project6/img-offset.png)
+![Offset](./Project_6_Internals/img-offset.png)
 296 / 16 = 18.5
 
 Item looked up
-![First Item](/Project6/img-firstItem.png)
+![First Item](./Project_6_Internals/img-firstItem.png)
 
 #### Table Row Layout
 
 Header of Item
-![Header of Item](/Project6/img-headerOfItem.png)
+![Header of Item](./Project_6_Internals/img-headerOfItem.png)
 
 Start of Data Stored
-![Start of Data Stored](/Project6/img-startOfDataStored.png)
+![Start of Data Stored](./Project_6_Internals/img-startOfDataStored.png)
 
 The user id we have stored in the `id` column
-![User ID](/Project6/img-idData.png)
+![User ID](./Project_6_Internals/img-idData.png)
 
 Confirmation of user id
-![Confirmation of Data](/Project6/img-confirmUser.png)
+![Confirmation of Data](./Project_6_Internals/img-confirmUser.png)
 
 Get item length
-![Item Length](/Project6/img-itemLength.png)
+![Item Length](./Project_6_Internals/img-itemLength.png)
 
 ### Behind the Scenes of Indexes
 
