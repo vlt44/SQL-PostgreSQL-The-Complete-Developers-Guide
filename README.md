@@ -1,13 +1,13 @@
 # SQL & PostgreSQL: The Complete Developer's Guide
 
-A collection of exercises and projects completed while working through Stephen Grider's course, **[SQL and PostgreSQL: The Complete Developer's Guide](https://www.udemy.com/course/sql-and-postgresql/)**.
+A collection of exercises, projects and personal notes completed while working through, **[SQL and PostgreSQL: The Complete Developer's Guide](https://www.udemy.com/course/sql-and-postgresql/)**.
 
 ## Technologies Used
 
-- PostgreSQL
 - SQL
+- PostgreSQL
 - pgAdmin
-- Terminal
+- Hex Editor
 
 ## Course Objectives
 
@@ -17,6 +17,16 @@ The course focuses on:
 - Designing the schema, or structure, of the database
 - Understanding when to use advanced features
 - Managing the database in a production environment
+
+## Table of Contents
+
+- [Project 1: Simple - But Powerful - SQL Statements](#project-simple---but-powerful---sql-statements)
+- [Project 2: Photo Sharing DB](#project-photo-sharing-db)
+- [Project 3: Working with Large Datasets](#project-working-with-large-datasets)
+- [Project 4: PostgreSQL](#project-postgresql)
+- [Project 5: Design IG](#project-design-ig)
+- [Project 6: Understanding the Internals of Postgres](#project-understanding-the-internals-of-postgres)
+- [Project 7](#project-7)
 
 ## Database Design Process
 
@@ -625,15 +635,15 @@ Run `ROLLBACK` to dump all pending changes and delete separate workspace
 - a bad command will put transaction in an aborted state, must rollback
 - a crash will automatically rollback the transactoin
 
-#### Schema & Data Migrations
-
-Making Changes to Your Database Structure
-
-- Changes to the DB structure and changes to clients need to be made at precisely the same time
+## Project: [Schemas & Data Migrations](/Project7/)
 
 `UP` contains a statement that advance, or upgrades, the structure of the DB
 
 `DOWN` contains a statement that exactly undo's the `UP` command
+
+Making Changes to Your Database Structure
+
+- Changes to the DB structure and changes to clients need to be made at precisely the same time
 
 Schema Migration: add/drop columns
 
