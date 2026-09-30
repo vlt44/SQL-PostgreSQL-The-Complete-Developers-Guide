@@ -26,7 +26,7 @@ The course focuses on:
 - [Project 4: PostgreSQL](#project-postgresql)
 - [Project 5: Design IG](#project-design-ig)
 - [Project 6: Understanding the Internals of Postgres](#project-understanding-the-internals-of-postgres)
-- [Project 7](#project-7)
+- [Project 7:](#project-7)
 
 ## Database Design Process
 
@@ -635,7 +635,7 @@ Run `ROLLBACK` to dump all pending changes and delete separate workspace
 - a bad command will put transaction in an aborted state, must rollback
 - a crash will automatically rollback the transactoin
 
-## Project: [Schemas & Data Migrations](/Project7/)
+## Project: [](/Project7/)
 
 `UP` contains a statement that advance, or upgrades, the structure of the DB
 
