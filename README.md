@@ -366,7 +366,7 @@ Insert and update data
 - SQL Schema Design Tool
 - Database Design Patterns
 
-![IG tables](/Project_5_DesignIG/img-designIGtables.png)
+![IG tables](/Project_5_DesignIG/assets/img-designIGtables.png)
 
 ### `Likes` System
 
@@ -390,8 +390,8 @@ Do not add `likes` Column to posts
 
 A `likes` table must be created or build a reactions table instead
 
-![Likes Table](/Project_5_DesignIG/img-likesTable.png)
-![Reactions Table](/Project_5_DesignIG/img-reactionsTable.png)
+![Likes Table](/Project_5_DesignIG/assets/img-likesTable.png)
+![Reactions Table](/Project_5_DesignIG/assets/img-reactionsTable.png)
 
 #### -Polymorphic Association Solution-
 
@@ -400,12 +400,12 @@ A `likes` table must be created or build a reactions table instead
 - Cannot use foreign key columns - `liked-id` is a plain integer.
 - Not recommended, but still commonly used.
 
-![Polymorphic Assoc Table](/Project_5_DesignIG/img-polymorphicAssoc.png)
+![Polymorphic Assoc Table](/Project_5_DesignIG/assets/img-polymorphicAssoc.png)
 `liked_type` points to a table, `liked_id` points to id in that table
 
 #### -Alternative Polymorphic Association Solution-
 
-![Alternative Polymorphic Assoc Table](/Project_5_DesignIG/img-alternative.png)
+![Alternative Polymorphic Assoc Table](/Project_5_DesignIG/assets/img-alternative.png)
 
 ```
 Add CHECK of (
@@ -421,7 +421,7 @@ COALESCE ((comment_id)::BOOLEAN::INTEGER, 0)
 
 #### -Simpliest Solution-
 
-![Simpliest Table](/Project_5_DesignIG/img-simple.png)
+![Simpliest Table](/Project_5_DesignIG/assets/img-simple.png)
 
 - Each type of like gets its own table
 - Still want to write queries that will count up all likes? You can use a Union or a View
@@ -434,7 +434,7 @@ COALESCE ((comment_id)::BOOLEAN::INTEGER, 0)
 - tag user in photo.
 - tag user in caption.
 
-![Mentions Table](/Project_5_DesignIG/img-mentionsTables.png)
+![Mentions Table](/Project_5_DesignIG/assets/img-mentionsTables.png)
 
 All tags could go in one table, things to consider:
 
@@ -449,7 +449,7 @@ All tags could go in one table, things to consider:
 - search for posts that contains hashtags
   \*\*could expanded on usage for which comments and users is using it
 
-![Mentions Table](/Project_5_DesignIG/img-hashtagsTables.png)
+![Mentions Table](/Project_5_DesignIG/assets/img-hashtagsTables.png)
 
 ### `Followers` System
 
@@ -459,7 +459,7 @@ All tags could go in one table, things to consider:
 - number of followers.
 - number of following.
 
-![Followers Table](/Project_5_DesignIG/img-followersTable.png)
+![Followers Table](/Project_5_DesignIG/assets/img-followersTable.png)
 
 #### NOT NULL vs DEFAULT
 
@@ -482,13 +482,13 @@ All tags could go in one table, things to consider:
 - Need to ensure the correct type/domain of value → Add validation
 
 Exercise: Highest User ID
-![Highest User ID](/Project_5_DesignIG/img-highestUserID.png)
+![Highest User ID](/Project_5_DesignIG/assets/img-highestUserID.png)
 
 Exercise: Post By User
-![Post By User](/Project_5_DesignIG/img-postByUser.png)
+![Post By User](/Project_5_DesignIG/assets/img-postByUser.png)
 
 Exercise: Likes Per User
-![Likes Per User](/Project_5_DesignIG/img-likesPerUser.png)
+![Likes Per User](/Project_5_DesignIG/assets/img-likesPerUser.png)
 
 ## Project: [Understanding the Internals of Postgres](/Project_6_Internals)
 
@@ -507,51 +507,51 @@ Exercise: Likes Per User
 
 #### Locating files
 
-![Database List](./Project_6_Internals/img-dbList.png)
-![Object List](./Project_6_Internals/img-objList.png)
-![User Object using HEX editor](./Project_6_Internals/img-usersObjHEX.png)
+![Database List](./Project_6_Internals/assets/img-dbList.png)
+![Object List](./Project_6_Internals/assets/img-objList.png)
+![User Object using HEX editor](./Project_6_Internals/assets/img-usersObjHEX.png)
 
 #### Mapping Page Layout
 
 PageHeaderData
-![PageHeaderData](./Project_6_Internals/img-header.png)
+![PageHeaderData](./Project_6_Internals/assets/img-header.png)
 
 pd_lower
-![pd_lower](./Project_6_Internals/img-pdLower.png)
+![pd_lower](./Project_6_Internals/assets/img-pdLower.png)
 
 First ItemId
-![first ItemId](./Project_6_Internals/img-firstItemId.png)
+![first ItemId](./Project_6_Internals/assets/img-firstItemId.png)
 
 Last ItemId
-![last ItemId](./Project_6_Internals/img-lastItemId.png)
+![last ItemId](./Project_6_Internals/assets/img-lastItemId.png)
 
 Inspect ItemId
-![Inspect ItemId 1/2](./Project_6_Internals/img-inspectItemId-A.png)
-![Inspect ItemId 2/2](./Project_6_Internals/img-inspectItemId-B.png)
+![Inspect ItemId 1/2](./Project_6_Internals/assets/img-inspectItemId-A.png)
+![Inspect ItemId 2/2](./Project_6_Internals/assets/img-inspectItemId-B.png)
 
 Offset (number of bytes from the start of the page to the first item)
-![Offset](./Project_6_Internals/img-offset.png)
+![Offset](./Project_6_Internals/assets/img-offset.png)
 296 / 16 = 18.5
 
 Item looked up
-![First Item](./Project_6_Internals/img-firstItem.png)
+![First Item](./Project_6_Internals/assets/img-firstItem.png)
 
 #### Table Row Layout
 
 Header of Item
-![Header of Item](./Project_6_Internals/img-headerOfItem.png)
+![Header of Item](./Project_6_Internals/assets/img-headerOfItem.png)
 
 Start of Data Stored
-![Start of Data Stored](./Project_6_Internals/img-startOfDataStored.png)
+![Start of Data Stored](./Project_6_Internals/assets/img-startOfDataStored.png)
 
 The user id we have stored in the `id` column
-![User ID](./Project_6_Internals/img-idData.png)
+![User ID](./Project_6_Internals/assets/img-idData.png)
 
 Confirmation of user id
-![Confirmation of Data](./Project_6_Internals/img-confirmUser.png)
+![Confirmation of Data](./Project_6_Internals/assets/img-confirmUser.png)
 
 Get item length
-![Item Length](./Project_6_Internals/img-itemLength.png)
+![Item Length](./Project_6_Internals/assets/img-itemLength.png)
 
 ### Behind the Scenes of Indexes
 
