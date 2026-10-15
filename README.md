@@ -41,7 +41,7 @@ The course introduces a simple framework for designing relational databases:
 3. **Select appropriate data types**
    - What type of data should each property contain?
 
-## Project: [Simple - But Powerful - SQL Statements](/Project1/SQLstatements.sql)
+## Project: [Simple - But Powerful - SQL Statements](/Project_1_SQL/SQLstatements.sql)
 
 ### Objective
 
@@ -83,7 +83,7 @@ A foreign key creates a relationship between two tables by referencing the prima
 - Exactly equal to the primary key of the referenced row
 - Will change if the relationship changes
 
-## Project: [Photo Sharing DB](/Project2/photosDB_comments.sql)
+## Project: [Photo Sharing DB](/Project_2_PhotoDB)
 
 ### Objective
 
@@ -197,7 +197,7 @@ LIMIT / OFFSET
 `INTERSECT` = AND  
 `EXCEPT` = NOT
 
-## Project: [Working with Large Datasets](/Project3/ecommerce.sql)
+## Project: [Working with Large Datasets](/Project_3_Ecommerce/ecommerce.sql)
 
 ### Objective
 
@@ -239,7 +239,7 @@ LIMIT / OFFSET
 | `IN`, `NOT IN`                        | A single column              |
 | `ALL`, `SOME`, `ANY`                  | A single column              |
 
-## Project: [PostgreSQL](/Project4/validations.sql)
+## Project: [PostgreSQL](/Project_4_Validations/validation.sql)
 
 ### Objective
 
@@ -359,7 +359,7 @@ Create new database and table
 Insert and update data
 ![pgAdmin Insert](./Project_4_Validations/pgAdmin_Insert.png)
 
-## Project: [Design IG](./Project_5_DesignIG)
+## Project: [Design IG](./Project_5_DesignIG/designIG.sql)
 
 ### Objective
 
@@ -490,7 +490,7 @@ Exercise: Post By User
 Exercise: Likes Per User
 ![Likes Per User](/Project_5_DesignIG/img-likesPerUser.png)
 
-## Project: [Understanding the Internals of Postgres](/Project6/)
+## Project: [Understanding the Internals of Postgres](/Project_6_Internals)
 
 ### Objective
 
@@ -635,7 +635,7 @@ Run `ROLLBACK` to dump all pending changes and delete separate workspace
 - a bad command will put transaction in an aborted state, must rollback
 - a crash will automatically rollback the transactoin
 
-## Project: [](/Project7/)
+## Project: [](/Project_7_DB)
 
 `UP` contains a statement that advance, or upgrades, the structure of the DB
 
