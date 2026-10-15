@@ -355,9 +355,9 @@ check for when a row is being inserted/updated
 - is a value >, <, >=, <=, = some other value
 
 Create new database and table
-![pgAdmin Create](./Project4/pgAdmin_Create.png)
+![pgAdmin Create](./Project_4_Validations/pgAdmin_Create.png)
 Insert and update data
-![pgAdmin Insert](./Project4/pgAdmin_Insert.png)
+![pgAdmin Insert](./Project_4_Validations/pgAdmin_Insert.png)
 
 ## Project: [Design IG](./Project_5_DesignIG)
 
