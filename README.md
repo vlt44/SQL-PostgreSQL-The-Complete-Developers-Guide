@@ -100,7 +100,7 @@ A foreign key creates a relationship between two tables by referencing the prima
 
 <br/>
 
-![JOIN CHEATSHEET](./Project2/joins_cheatsheet.png)
+![JOIN CHEATSHEET](./Project_2_PhotoDB/joins_cheatsheet.png)
 
 ### Joins
 
