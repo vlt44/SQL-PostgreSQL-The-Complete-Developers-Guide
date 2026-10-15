@@ -359,14 +359,14 @@ Create new database and table
 Insert and update data
 ![pgAdmin Insert](./Project4/pgAdmin_Insert.png)
 
-## Project: [Design IG](./Project5_DesignIG)
+## Project: [Design IG](./Project_5_DesignIG)
 
 ### Objective
 
 - SQL Schema Design Tool
 - Database Design Patterns
 
-![IG tables](/Project5_DesignIG/img-designIGtables.png)
+![IG tables](/Project_5_DesignIG/img-designIGtables.png)
 
 ### `Likes` System
 
@@ -390,8 +390,8 @@ Do not add `likes` Column to posts
 
 A `likes` table must be created or build a reactions table instead
 
-![Likes Table](/Project5_DesignIG/img-likesTable.png)
-![Reactions Table](/Project5_DesignIG/img-reactionsTable.png)
+![Likes Table](/Project_5_DesignIG/img-likesTable.png)
+![Reactions Table](/Project_5_DesignIG/img-reactionsTable.png)
 
 #### -Polymorphic Association Solution-
 
@@ -400,12 +400,12 @@ A `likes` table must be created or build a reactions table instead
 - Cannot use foreign key columns - `liked-id` is a plain integer.
 - Not recommended, but still commonly used.
 
-![Polymorphic Assoc Table](/Project5_DesignIG/img-polymorphicAssoc.png)
+![Polymorphic Assoc Table](/Project_5_DesignIG/img-polymorphicAssoc.png)
 `liked_type` points to a table, `liked_id` points to id in that table
 
 #### -Alternative Polymorphic Association Solution-
 
-![Alternative Polymorphic Assoc Table](/Project5_DesignIG/img-alternative.png)
+![Alternative Polymorphic Assoc Table](/Project_5_DesignIG/img-alternative.png)
 
 ```
 Add CHECK of (
@@ -421,7 +421,7 @@ COALESCE ((comment_id)::BOOLEAN::INTEGER, 0)
 
 #### -Simpliest Solution-
 
-![Simpliest Table](/Project5_DesignIG/img-simple.png)
+![Simpliest Table](/Project_5_DesignIG/img-simple.png)
 
 - Each type of like gets its own table
 - Still want to write queries that will count up all likes? You can use a Union or a View
@@ -434,7 +434,7 @@ COALESCE ((comment_id)::BOOLEAN::INTEGER, 0)
 - tag user in photo.
 - tag user in caption.
 
-![Mentions Table](/Project5_DesignIG/img-mentionsTables.png)
+![Mentions Table](/Project_5_DesignIG/img-mentionsTables.png)
 
 All tags could go in one table, things to consider:
 
@@ -449,7 +449,7 @@ All tags could go in one table, things to consider:
 - search for posts that contains hashtags
   \*\*could expanded on usage for which comments and users is using it
 
-![Mentions Table](/Project5_DesignIG/img-hashtagsTables.png)
+![Mentions Table](/Project_5_DesignIG/img-hashtagsTables.png)
 
 ### `Followers` System
 
@@ -459,7 +459,7 @@ All tags could go in one table, things to consider:
 - number of followers.
 - number of following.
 
-![Followers Table](/Project5_DesignIG/img-followersTable.png)
+![Followers Table](/Project_5_DesignIG/img-followersTable.png)
 
 #### NOT NULL vs DEFAULT
 
@@ -482,13 +482,13 @@ All tags could go in one table, things to consider:
 - Need to ensure the correct type/domain of value → Add validation
 
 Exercise: Highest User ID
-![Highest User ID](/Project5_DesignIG/img-highestUserID.png)
+![Highest User ID](/Project_5_DesignIG/img-highestUserID.png)
 
 Exercise: Post By User
-![Post By User](/Project5_DesignIG/img-postByUser.png)
+![Post By User](/Project_5_DesignIG/img-postByUser.png)
 
 Exercise: Likes Per User
-![Likes Per User](/Project5_DesignIG/img-likesPerUser.png)
+![Likes Per User](/Project_5_DesignIG/img-likesPerUser.png)
 
 ## Project: [Understanding the Internals of Postgres](/Project6/)
 
