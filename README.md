@@ -653,6 +653,24 @@ Schema Migration: add/drop columns
 
 Data Migration: copy data
 
+### How to migrate from separate columns (`lat/lng`) to a single column (`loc`) without downtime:
+
+Use a gradual migration approach:
+
+1. **Add `loc` column** to the database table.
+2. **Deploy a new API version** that writes to both `lat/lng` and `loc` to maintain compatibility.
+3. **Backfill existing records** by copying `lat/lng` values into `loc`.
+4. **Update application code** to write only to `loc`.
+5. **Drop the legacy `lat/lng` columns** once all application code uses `loc`.
+
+Key considerations:
+
+- Maintain backward compatibility during the transition.
+- Ensure existing records are backfilled before removing legacy columns.
+- Deploy application changes in stages to minimize downtime and risk.
+- Verify that all services and clients use `loc` before dropping `lat/lng`.
+- Keep the old columns until the migration is verified and rollback is no longer needed.
+
 ## Project: [Accessing Postgres from APIs](/Project_8_APIs/)
 
 ## Project: [Data Access Patterns](/Project_9_AccessPatterns/)
