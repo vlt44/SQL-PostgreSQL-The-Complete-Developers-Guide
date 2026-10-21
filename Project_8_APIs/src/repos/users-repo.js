@@ -20,7 +20,11 @@ class UserRepo {
     return toCamelCase(rows)[0];
   }
 
-  static async update() {}
+  static async update() {
+    const { rows } = await pool.query('UPDATE users SET username = $1, bio = $2 WHERE id = $3 RETURNING *;', [username, bio, id]);
+    
+    return toCamelCase(rows)[0];
+  }
 
   static async delete() {}
 }
