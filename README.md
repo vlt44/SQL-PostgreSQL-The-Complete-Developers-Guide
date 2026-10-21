@@ -656,21 +656,41 @@ Data Migration: copy data
 
 ### How to migrate from separate columns (`lat/lng`) to a single column (`loc`) without downtime:
 
-Use a gradual migration approach:
+Options:
 
-1. **Add `loc` column** to the database table.
-2. **Deploy a new API version** that writes to both `lat/lng` and `loc` to maintain compatibility.
-3. **Backfill existing records** by copying `lat/lng` values into `loc`.
-4. **Update application code** to write only to `loc`.
-5. **Drop the legacy `lat/lng` columns** once all application code uses `loc`.
+- Application-Level Updates (JavaScript): Fetch records from the database, run business logic and validation in JavaScript, then update the records in the database. Records can be processed in batches.
+
+- Database-Level Updates (SQL): Execute a SQL UPDATE statement directly against the database to update matching records.
+
+| Approach                                   | Description                                                              | Advantages                                                                         | Disadvantages                                                                                         |
+| ------------------------------------------ | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Application-Level Updates (JavaScript)** | Fetch records, process them in Node.js, and update them in the database. | Supports complex business logic and validation.                                    | More data transfer; batching can fail partway through; loading too many records can crash the server. |
+| **Database-Level Updates (SQL)**           | Update matching records directly using a SQL query.                      | Faster for bulk updates; minimizes data transfer between Node.js and the database. | More difficult to implement complex application-level business logic and validation.                  |
+
+Gradual Migration Approach:
+
+1. Add the new column: Add loc to the database table while keeping the existing lat and lng columns.
+2. Deploy a new API version: Update the application to write to both lat/lng and loc to maintain compatibility with existing code.
+3. Backfill existing records: Copy existing lat/lng values into loc for records that have not yet been migrated.
+4. Update application code: Modify the application to read from and write to loc instead of the legacy columns.
+5. Drop legacy columns: Remove lat and lng only after verifying that all application code, services, and clients use loc and rollback is no longer needed.
 
 Key considerations:
 
-- Maintain backward compatibility during the transition.
-- Ensure existing records are backfilled before removing legacy columns.
-- Deploy application changes in stages to minimize downtime and risk.
-- Verify that all services and clients use `loc` before dropping `lat/lng`.
-- Keep the old columns until the migration is verified and rollback is no longer needed.
+- Backward compatibility: Keep the legacy columns available while old application versions still depend on them.
+- Data integrity: Ensure existing records are backfilled correctly before removing legacy columns.
+- Deployment strategy: Deploy application and database changes in stages to minimize downtime and risk.
+- Batch processing: For large datasets, consider processing records in batches to manage resource consumption.
+- Idempotency: Design the backfill so it can be safely rerun without overwriting already-migrated or newer values.
+- Concurrency: Account for records being modified while the backfill is running.
+- Verification: Confirm that all records have valid loc values and that all services and clients use the new column.
+- Rollback: Retain the old columns until the migration has been verified and rollback is no longer needed.
+
+Use database-level updates when the backfill is a straightforward transformation that SQL can handle efficiently. Use application-level updates when records require complex business logic or validation.
+
+For large datasets, process updates in batches when appropriate. Verify the migrated data before switching all application reads to loc and eventually dropping lat and lng.
+
+Important distinction: The gradual migration describes the overall schema-change strategy, while application-level and database-level updates describe two ways to perform the backfill in step 3.
 
 ## Project: [Advanced Databases](/Project_8_AdvancedDBs/)
 
@@ -680,5 +700,46 @@ Key considerations:
 - Data Access Patterns
 - Security Around Postgres
 - Fast Parellel Testing
+
+## Node API Routes
+
+The Node API defines routes and HTTP methods for performing CRUD operations on users.
+
+| Route        | Method   | Goal                                  |
+| ------------ | -------- | ------------------------------------- |
+| `/users`     | `GET`    | Fetch all users from the users table. |
+| `/users/:id` | `GET`    | Fetch a user with a particular ID.    |
+| `/users`     | `POST`   | Create a new user.                    |
+| `/users/:id` | `PUT`    | Update a user with a particular ID.   |
+| `/users/:id` | `DELETE` | Delete a user with a particular ID.   |
+
+## User Repository
+
+The User Repository provides functions for interacting with user data.
+
+| Function   | Goal                                                         |
+| ---------- | ------------------------------------------------------------ |
+| `find`     | Return an array of objects, each object representing a user. |
+| `findById` | Find a user with the provided ID.                            |
+| `insert`   | Add a user with some provided properties.                    |
+| `update`   | Update a user with the provided ID.                          |
+| `delete`   | Delete the user with the provided ID.                        |
+| `findOne`  | Find one user with some provided filtering criteria.         |
+| `count`    | Return the number of rows in the users table.                |
+| `validate` | Make sure a user has valid properties.                       |
+
+\*Can be implemented as an object with plain functions, as an instance of a class, as a class with static methods, anything
+
+## API Routes and Repository Functions
+
+API routes handle incoming HTTP requests and delegate data operations to the User Repository.
+
+| API Route           | Repository Function | Operation              |
+| ------------------- | ------------------- | ---------------------- |
+| `GET /users`        | `find`              | Retrieve all users.    |
+| `GET /users/:id`    | `findById`          | Retrieve a user by ID. |
+| `POST /users`       | `insert`            | Create a new user.     |
+| `PUT /users/:id`    | `update`            | Update a user by ID.   |
+| `DELETE /users/:id` | `delete`            | Delete a user by ID.   |
 
 # Certificate
