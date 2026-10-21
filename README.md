@@ -27,10 +27,7 @@ The course focuses on:
 - [Project 5: Design IG](#project-design-ig)
 - [Project 6: Understanding the Internals of Postgres](#project-understanding-the-internals-of-postgres)
 - [Project 7: Data and Schema Migrations](#project-data-and-schema-migrations)
-- [Project 8: Accessing Postgres from APIs](#project-accessing-postgres-from-apis)
-- [Project 9: Data Access Patterns](#project-data-access-patterns)
-- [Project 10: Security Around Postgres](#project-security-around-postgres)
-- [Project 11: Fast Parallel Testing](#project-fast-parellel-testing)
+- [Project 8: Advanced Databases](#project-advanced-databases)
 
 ## Database Design Process
 
@@ -639,7 +636,11 @@ Run `ROLLBACK` to dump all pending changes and delete separate workspace
 - a bad command will put transaction in an aborted state, must rollback
 - a crash will automatically rollback the transactoin
 
-## Project: [Data and Schema Migrations](/Project_7_DB/migrations/migrations/)
+## Project: [Data and Schema Migrations](/Project_7_DB/migrations/)
+
+### Objective
+
+- Data and Schema Migrations
 
 `UP` contains a statement that advance, or upgrades, the structure of the DB
 
@@ -671,12 +672,13 @@ Key considerations:
 - Verify that all services and clients use `loc` before dropping `lat/lng`.
 - Keep the old columns until the migration is verified and rollback is no longer needed.
 
-## Project: [Accessing Postgres from APIs](/Project_8_APIs/)
+## Project: [Advanced Databases](/Project_8_AdvancedDBs/)
 
-## Project: [Data Access Patterns](/Project_9_AccessPatterns/)
+### Objective
 
-## Project: [Security Around Postgres](/Project_10_Security/)
-
-## Project: [Fast Parellel Testing](/Project_11_Testing/)
+- Accessing Postgres from APIs
+- Data Access Patterns
+- Security Around Postgres
+- Fast Parellel Testing
 
 # Certificate
