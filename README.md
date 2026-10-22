@@ -650,9 +650,9 @@ Making Changes to Your Database Structure
 
 - Changes to the DB structure and changes to clients need to be made at precisely the same time
 
-Schema Migration: add/drop columns
+**Schema Migration:** add/drop columns
 
-Data Migration: copy data
+**Data Migration:** copy data
 
 ### How to migrate from separate columns (`lat/lng`) to a single column (`loc`) without downtime:
 
@@ -669,22 +669,22 @@ Options:
 
 Gradual Migration Approach:
 
-1. Add the new column: Add loc to the database table while keeping the existing lat and lng columns.
-2. Deploy a new API version: Update the application to write to both lat/lng and loc to maintain compatibility with existing code.
-3. Backfill existing records: Copy existing lat/lng values into loc for records that have not yet been migrated.
-4. Update application code: Modify the application to read from and write to loc instead of the legacy columns.
-5. Drop legacy columns: Remove lat and lng only after verifying that all application code, services, and clients use loc and rollback is no longer needed.
+1. **Add the new column:** Add loc to the database table while keeping the existing lat and lng columns.
+2. **Deploy a new API version:** Update the application to write to both lat/lng and loc to maintain compatibility with existing code.
+3. **Backfill existing records:** Copy existing lat/lng values into loc for records that have not yet been migrated.
+4. **Update application code:** Modify the application to read from and write to loc instead of the legacy columns.
+5. **Drop legacy columns:** Remove lat and lng only after verifying that all application code, services, and clients use loc and rollback is no longer needed.
 
 Key considerations:
 
-- Backward compatibility: Keep the legacy columns available while old application versions still depend on them.
-- Data integrity: Ensure existing records are backfilled correctly before removing legacy columns.
-- Deployment strategy: Deploy application and database changes in stages to minimize downtime and risk.
-- Batch processing: For large datasets, consider processing records in batches to manage resource consumption.
-- Idempotency: Design the backfill so it can be safely rerun without overwriting already-migrated or newer values.
-- Concurrency: Account for records being modified while the backfill is running.
-- Verification: Confirm that all records have valid loc values and that all services and clients use the new column.
-- Rollback: Retain the old columns until the migration has been verified and rollback is no longer needed.
+- **Backward compatibility:** Keep the legacy columns available while old application versions still depend on them.
+- **Data integrity:** Ensure existing records are backfilled correctly before removing legacy columns.
+- **Deployment strategy:** Deploy application and database changes in stages to minimize downtime and risk.
+- **Batch processing:** For large datasets, consider processing records in batches to manage resource consumption.
+- **Idempotency:** Design the backfill so it can be safely rerun without overwriting already-migrated or newer values.
+- **Concurrency:** Account for records being modified while the backfill is running.
+- **Verification:** Confirm that all records have valid loc values and that all services and clients use the new column.
+- **Rollback:** Retain the old columns until the migration has been verified and rollback is no longer needed.
 
 Use database-level updates when the backfill is a straightforward transformation that SQL can handle efficiently. Use application-level updates when records require complex business logic or validation.
 
@@ -701,7 +701,7 @@ Important distinction: The gradual migration describes the overall schema-change
 - Security Around Postgres
 - Fast Parellel Testing
 
-## Node API Routes
+#### API Routes
 
 The Node API defines routes and HTTP methods for performing CRUD operations on users.
 
@@ -713,7 +713,7 @@ The Node API defines routes and HTTP methods for performing CRUD operations on u
 | `/users/:id` | `PUT`    | Update a user with a particular ID.   |
 | `/users/:id` | `DELETE` | Delete a user with a particular ID.   |
 
-## User Repository
+#### User Repository
 
 The User Repository provides functions for interacting with user data.
 
@@ -730,7 +730,7 @@ The User Repository provides functions for interacting with user data.
 
 \*Can be implemented as an object with plain functions, as an instance of a class, as a class with static methods, anything
 
-## API Routes and Repository Functions
+#### API Routes and Repository Functions
 
 API routes handle incoming HTTP requests and delegate data operations to the User Repository.
 
