@@ -35,7 +35,7 @@ class UserRepo {
   static async count() {
     const { rows } = await pool.query('SELECT COUNT(*) FROM users;');
 
-    return rows[0].count;
+    return parseInt(rows[0].count);
   }
 }
 
