@@ -743,3 +743,5 @@ API routes handle incoming HTTP requests and delegate data operations to the Use
 | `DELETE /users/:id` | `delete`            | Delete a user by ID.   |
 
 # Certificate
+
+![Certificate of Completion](./cert.jpg)
